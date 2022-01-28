@@ -894,14 +894,20 @@ __meta__ = {
 position = Vector2( 0, 598 )
 texture = ExtResource( 2 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Day" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
 position = Vector2( -2053, -651 )
 texture = ExtResource( 7 )
 offset = Vector2( 2564, 350 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Day2" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
-position = Vector2( -2053, -1251 )
+position = Vector2( 511, -651 )
 texture = ExtResource( 7 )
 offset = Vector2( 0, -250 )
 __meta__ = {
