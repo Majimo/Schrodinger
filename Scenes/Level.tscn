@@ -426,12 +426,12 @@ format = 1
 tile_data = PoolIntArray( -327696, 1, 0, -262160, 1, 0, -262159, 1, 0 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 640, -140 )
+position = Vector2( 122, -100 )
 scale = Vector2( 1.6776, 1.95366 )
 texture = ExtResource( 2 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 225, 257 )
+position = Vector2( 118, -257 )
 z_index = 1
 
 [node name="UI_Container" parent="." instance=ExtResource( 3 )]
