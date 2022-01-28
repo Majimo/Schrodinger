@@ -1,6 +1,6 @@
 extends Node
 
-var nb_hp: int = 10 setget set_nb_hp, get_nb_hp
+var nb_hp: int = 9 setget set_nb_hp, get_nb_hp
 
 #### ACCESSORS ####
 func set_nb_hp(value: int):

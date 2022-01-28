@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
+
+[sub_resource type="Theme" id=1]
 
 [node name="UI_Container" type="CanvasLayer"]
 
@@ -21,16 +23,17 @@ __meta__ = {
 }
 
 [node name="HP" type="HBoxContainer" parent="UI/HUD"]
-margin_right = 46.0
+margin_right = 40.0
 margin_bottom = 14.0
 
 [node name="HPLabel" type="Label" parent="UI/HUD/HP"]
 margin_right = 26.0
 margin_bottom = 14.0
+theme = SubResource( 1 )
 text = "HP :"
 
 [node name="HPCounter" type="Label" parent="UI/HUD/HP"]
 margin_left = 30.0
-margin_right = 46.0
+margin_right = 38.0
 margin_bottom = 14.0
-text = "10"
+text = "9"

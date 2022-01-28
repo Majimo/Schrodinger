@@ -436,10 +436,20 @@ motion_mirroring = Vector2( 1024, 0 )
 texture = ExtResource( 2 )
 centered = false
 
+[node name="Death2" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
+position = Vector2( 0, 598 )
+texture = ExtResource( 2 )
+centered = false
+
 [node name="Day" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
-position = Vector2( 511, -51 )
+position = Vector2( -2053, -651 )
 texture = ExtResource( 7 )
-offset = Vector2( 0, -250 )
+offset = Vector2( 2564, 350 )
+
+[node name="Day2" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
+position = Vector2( -2053, -1251 )
+texture = ExtResource( 7 )
+offset = Vector2( 2564, 350 )
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
 position = Vector2( -684, -213 )

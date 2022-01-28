@@ -1,31 +1,32 @@
 extends KinematicBody2D
 
+onready var cat = $"."
 const GRAVITY = 1000
-const UP = Vector2(0,-1)
 const JUMP = 500
 
 var is_alive = true
 var vel = Vector2()
+var up = Vector2(0,-1)
 export (int) var max_speed = 200
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_kill"):
+	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
+		var actual_position = position
+		var newX_position = 250 if is_alive else -250
+		up = Vector2(0,1) if is_alive else Vector2(0,-1)
+		cat.set_position(Vector2(position.x, newX_position))
 		is_alive = !is_alive
+		if !is_alive:
+			EVENT.emit_signal("hp_lost")
 		
 	manage_gravity(delta)
 	movement_loop()
 	
-	vel = move_and_slide(vel, UP)
+	vel = move_and_slide(vel, up)
+
+
+#### BUILT-IN ####
 
 func movement_loop():
 	var right = Input.is_action_pressed("ui_right")
