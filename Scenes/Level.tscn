@@ -75,10 +75,10 @@ __meta__ = {
 [node name="cat_bowl" parent="." instance=ExtResource( 4 )]
 position = Vector2( 712, -592 )
 
-[node name="World_life_sound" type="AudioStreamPlayer2D" parent="."]
+[node name="World_life_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
 
-[node name="World_death_sound" type="AudioStreamPlayer2D" parent="."]
+[node name="World_death_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
 autoplay = true
