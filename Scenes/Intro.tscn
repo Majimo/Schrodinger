@@ -5,7 +5,7 @@
 [ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scripts/Intro.gd" type="Script" id=4]
 [ext_resource path="res://Assets/death_background.png" type="Texture" id=5]
-[ext_resource path="res://Assets/schrodinger.png" type="Texture" id=6]
+[ext_resource path="res://Assets/schrodinger_bis.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=5]
 size = 180
@@ -118,6 +118,6 @@ __meta__ = {
 
 [node name="Sprite2" type="Sprite" parent="."]
 modulate = Color( 1, 1, 1, 0.560784 )
-position = Vector2( 827.82, 358.75 )
-scale = Vector2( 2.01434, 2.01434 )
+position = Vector2( 849.918, 348.918 )
+scale = Vector2( 2.29623, 2.29623 )
 texture = ExtResource( 6 )
