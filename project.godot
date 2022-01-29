@@ -72,6 +72,10 @@ GAME="*res://Autoload/Game.gd"
 EVENT="*res://Autoload/Event.gd"
 COLORS="*res://Autoload/Colors.gd"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )
+
 [input]
 
 ui_kill={
