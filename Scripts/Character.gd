@@ -12,10 +12,10 @@ export (int) var max_speed = 200
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
-		var actual_position = position
-		var newX_position = 250 if is_alive else -250
+		var gradient_death_effect = 25 if is_alive else -25
+		var new_positionY = (-position.y) + gradient_death_effect
 		up = Vector2(0,1) if is_alive else Vector2(0,-1)
-		cat.set_position(Vector2(position.x, newX_position))
+		cat.set_position(Vector2(position.x, new_positionY))
 		is_alive = !is_alive
 		if !is_alive:
 			EVENT.emit_signal("hp_lost")
