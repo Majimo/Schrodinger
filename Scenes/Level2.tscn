@@ -10,7 +10,7 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
 [ext_resource path="res://sound/Chat_de_Schroedinger.mp3" type="AudioStream" id=10]
 
-[node name="Level" type="YSort"]
+[node name="Level2" type="YSort"]
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
