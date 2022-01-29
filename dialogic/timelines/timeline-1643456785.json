@@ -1,0 +1,81 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"animation": 1,
+			"animation_length": 0,
+			"character": "character-1643456471.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Amused",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"z_index": 2
+		},
+		{
+			"character": "character-1643456471.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Mais... Mais... Ou suis-je ?"
+		},
+		{
+			"action": "join",
+			"animation": 1,
+			"animation_length": 0,
+			"character": "character-1643457142.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			},
+			"z_index": 2
+		},
+		{
+			"character": "character-1643457142.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tu es dans ma boite... Je suis sympa, je t'aies laisser a manger !"
+		},
+		{
+			"character": "character-1643456471.json",
+			"event_id": "dialogic_001",
+			"portrait": "Amused",
+			"text": "Bon, plus qu'a trouver cette gamelle. \nMais... Je suis mort...? Je suis vivant...? Je ne sais plus !"
+		},
+		{
+			"character": "character-1643457142.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Humm... Tu n'es ni mort ni vivant ! \nEnfin, tant que je n'ouvre pas la boite, je ne saurai pas !"
+		},
+		{
+			"character": "character-1643456471.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Hein ?! Mais... Mais non......"
+		},
+		{
+			"emit_signal": "end_intro",
+			"event_id": "dialogic_040"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.5
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4 - DEV",
+		"file": "timeline-1643456785.json",
+		"name": "intro"
+	}
+}

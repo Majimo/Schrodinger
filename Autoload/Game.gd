@@ -38,4 +38,3 @@ func _on_EVENT_set_hp_based_on_difficulty(difficulty: int):
 		set_nb_hp(9)
 	else:
 		set_nb_hp(7)
-	print(get_nb_hp())

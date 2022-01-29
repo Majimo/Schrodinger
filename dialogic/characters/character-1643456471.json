@@ -1,0 +1,25 @@
+{
+	"color": "#ffff0000",
+	"description": "Schrodinger's Cat",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1643456471.json",
+	"mirror_portraits": false,
+	"name": "Cat",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Assets/cat-idle_00000.png"
+		},
+		{
+			"name": "Amused",
+			"path": "res://Assets/cat-idle_00011.png"
+		}
+	],
+	"scale": 100,
+	"theme": ""
+}

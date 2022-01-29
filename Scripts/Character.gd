@@ -13,10 +13,7 @@ var is_alive = true
 var vel = Vector2()
 var up = Vector2(0,-1)
 
-## fonction fournie par défaut pour réaliser des actions 60*/secondes
 func _physics_process(delta):
-	
-
 	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
 		var gradient_death_effect = 25 if GAME.get_is_alive() else -25
 		var new_positionY = position.y
@@ -35,7 +32,6 @@ func _physics_process(delta):
 	movement_loop()
 	
 	vel = move_and_slide(vel, up)
-
 
 #### BUILT-IN ####
 
@@ -69,7 +65,6 @@ func manage_jump():
 		vel.y = -JUMP
 	else:
 		vel.y = JUMP
-
 
 func movement_loop():
 	var right = Input.is_action_pressed("ui_right")
