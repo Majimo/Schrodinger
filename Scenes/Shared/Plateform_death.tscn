@@ -249,6 +249,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 extents = Vector2( 192, 16 )
 
 [node name="Plateform_death" type="RigidBody2D"]
+mode = 3
 
 [node name="Tween" type="Tween" parent="."]
 

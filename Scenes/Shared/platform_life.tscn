@@ -333,6 +333,7 @@ segments = PoolVector2Array( 64, 37, 0, 37, 0, 37, 0, 0, 0, 0, 64, 0, 64, 0, 64,
 extents = Vector2( 192, 16 )
 
 [node name="platform_life" type="RigidBody2D"]
+mode = 3
 
 [node name="World_of_life" type="TileMap" parent="."]
 tile_set = SubResource( 6 )
