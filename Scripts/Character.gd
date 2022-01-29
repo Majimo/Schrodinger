@@ -39,22 +39,21 @@ func _physics_process(delta):
 #### BUILT-IN ####
 
 func manage_animation(moving):
-	$IdleAnimation.visible = !moving
-	$Sprite.visible = moving
+	if moving:
+		$CatAnimation.play("walk")
+	else:
+		$CatAnimation.play("idle")
 
 func manage_flip_h(dirx):
 	if dirx == 1:
-		$Sprite.flip_h = false
-		$IdleAnimation.flip_h = false
+		$CatAnimation.flip_h = false
 		$CollisionShape2D.position.x = 8
 	elif dirx == -1:
-		$Sprite.flip_h = true
-		$IdleAnimation.flip_h = true
+		$CatAnimation.flip_h = true
 		$CollisionShape2D.position.x = -7
 
 func manage_flip_v():
-	$Sprite.flip_v = !GAME.get_is_alive()
-	$IdleAnimation.flip_v = !GAME.get_is_alive()
+	$CatAnimation.flip_v = !GAME.get_is_alive()
 	$CollisionShape2D.position.y = 8 if GAME.get_is_alive() else -2
 
 func manage_gravity(delta):
