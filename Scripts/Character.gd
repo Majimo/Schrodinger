@@ -15,18 +15,21 @@ var up = Vector2(0,-1)
 
 ## fonction fournie par défaut pour réaliser des actions 60*/secondes
 func _physics_process(delta):
+	
+
 	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
-		var gradient_death_effect = 25 if is_alive else -25
-		var new_positionY = (-position.y) + gradient_death_effect
+		var gradient_death_effect = 25 if GAME.get_is_alive() else -25
+		var new_positionY = position.y
 		var new_positionX = position.x
-		up = Vector2(0,1) if is_alive else Vector2(0,-1)
-		is_alive = !is_alive
-		if !is_alive:
-			EVENT.emit_signal("hp_lost")
 		if is_on_floor():
 			new_positionX+= gradient_death_effect
 		if is_on_wall():
-			new_positionY+= gradient_death_effect
+			new_positionY-= gradient_death_effect
+		new_positionY = (-position.y) + gradient_death_effect
+		up = Vector2(0,1) if GAME.get_is_alive() else Vector2(0,-1)
+		EVENT.emit_signal("is_alive")
+		if !GAME.get_is_alive():
+			EVENT.emit_signal("hp_lost")
 		cat.set_position(Vector2(position.x, new_positionY))
 	manage_gravity(delta)
 	movement_loop()
@@ -51,18 +54,18 @@ func manage_flip_h(dirx):
 		$CollisionShape2D.position.x = -7
 
 func manage_flip_v():
-	$Sprite.flip_v = !is_alive
-	$IdleAnimation.flip_v = !is_alive
-	$CollisionShape2D.position.y = 8 if is_alive else -2
+	$Sprite.flip_v = !GAME.get_is_alive()
+	$IdleAnimation.flip_v = !GAME.get_is_alive()
+	$CollisionShape2D.position.y = 8 if GAME.get_is_alive() else -2
 
 func manage_gravity(delta):
-	if is_alive:
+	if GAME.get_is_alive():
 		vel.y += GRAVITY * delta
 	else:
 		vel.y -= (GRAVITY/2) * delta
 
 func manage_jump():
-	if is_alive:
+	if GAME.get_is_alive():
 		vel.y = -JUMP
 	else:
 		vel.y = JUMP
