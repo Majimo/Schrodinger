@@ -36,10 +36,9 @@ func movement_loop():
 	var dirx = int(right) - int(left)
 	vel.x = dirx * max_speed
 	
-	if dirx == -1:
-		$Sprite.flip_h = true
-	elif dirx == 1:
-		$Sprite.flip_h = false
+	manage_animation(dirx != 0)
+	
+	manage_flip_h(dirx)
 
 	if jump == true and is_on_floor():
 		manage_jump()
@@ -55,3 +54,15 @@ func manage_jump():
 		vel.y = -JUMP
 	else:
 		vel.y = JUMP
+
+func manage_animation(moving):
+	$IdleAnimation.visible = !moving
+	$Sprite.visible = moving
+	
+func manage_flip_h(dirx):
+	if dirx == 1:
+		$Sprite.flip_h = false
+		$IdleAnimation.flip_h = false
+	elif dirx == -1:
+		$Sprite.flip_h = true
+		$IdleAnimation.flip_h = true
