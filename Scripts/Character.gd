@@ -37,8 +37,13 @@ func _physics_process(delta):
 func manage_animation(moving):
 	if moving:
 		$CatAnimation.play("walk")
+		print("marche")
+		if !$CatWalk.is_playing():
+			$CatWalk.play()
 	else:
 		$CatAnimation.play("idle")
+		if $CatWalk.is_playing():
+			$CatWalk.stop()
 
 func manage_flip_h(dirx):
 	if dirx == 1:
@@ -60,6 +65,9 @@ func manage_gravity(delta):
 
 func manage_jump():
 	$CatAnimation.play("jump")
+	if $CatWalk.is_playing():
+		$CatWalk.stop()
+	$CatJump.play()
 	if GAME.get_is_alive():
 		vel.y = -JUMP
 	else:

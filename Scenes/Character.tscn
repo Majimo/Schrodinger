@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -40,6 +40,8 @@
 [ext_resource path="res://Assets/CatJump/Cat_Jump_2.png" type="Texture" id=38]
 [ext_resource path="res://Assets/CatJump/Cat_Jump_3.png" type="Texture" id=39]
 [ext_resource path="res://Assets/CatJump/Cat_Jump_4.png" type="Texture" id=40]
+[ext_resource path="res://sound/jump.wav" type="AudioStream" id=41]
+[ext_resource path="res://sound/paws.wav" type="AudioStream" id=42]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 50.75 )
@@ -92,5 +94,13 @@ animation = "idle"
 frame = 17
 playing = true
 flip_h = true
+
+[node name="CatJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 41 )
+volume_db = 20.0
+
+[node name="CatWalk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 42 )
+volume_db = 24.0
 
 [connection signal="animation_finished" from="CatAnimation" to="." method="_on_CatAnimation_animation_finished"]

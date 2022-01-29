@@ -645,10 +645,12 @@ position = Vector2( 712, -592 )
 
 [node name="World_life_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
+volume_db = -6.0
 autoplay = true
 
 [node name="World_death_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -6.0
 autoplay = true
 
 [node name="World_back" type="Node2D" parent="."]
