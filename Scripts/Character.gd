@@ -7,7 +7,7 @@ const GRAVITY = 1000
 ## valeur par défaut du saut
 const JUMP = 500
 
-export (int) var max_speed = 200
+var max_speed = 200
 
 var is_alive = true
 var vel = Vector2()
@@ -81,6 +81,8 @@ func movement_loop():
 	var jump = Input.is_action_pressed("ui_accept")
 	
 	var dirx = int(right) - int(left)
+	print(dirx)
+	print(max_speed)
 	vel.x = dirx * max_speed
 	
 	manage_flip_h(dirx)

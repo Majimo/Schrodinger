@@ -38,6 +38,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/Scripts/moving_platform_horizontal.gd">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/project.godot">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>
