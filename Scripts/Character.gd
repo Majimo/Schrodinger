@@ -14,7 +14,7 @@ var vel = Vector2()
 var up = Vector2(0,-1)
 
 func _ready():
-	up = Vector2(0,1) if GAME.get_is_alive() else Vector2(0,-1)
+	pass
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
@@ -26,14 +26,13 @@ func _physics_process(delta):
 		if is_on_wall():
 			new_positionY -= gradient_death_effect
 		new_positionY = (-position.y) + gradient_death_effect
-		up = Vector2(0,1) if GAME.get_is_alive() else Vector2(0,-1)
 		EVENT.emit_signal("is_alive")
 		if !GAME.get_is_alive():
 			EVENT.emit_signal("hp_lost")
 		cat.set_position(Vector2(position.x, new_positionY))
 	manage_gravity(delta)
 	movement_loop()
-	
+	up = Vector2(0,1) if !GAME.get_is_alive() else Vector2(0,-1)
 	vel = move_and_slide(vel, up)
 
 #### BUILT-IN ####
@@ -80,5 +79,6 @@ func movement_loop():
 	
 	manage_flip_h(dirx)
 	manage_flip_v()
-	if jump == true and is_on_floor():
+	
+	if jump and is_on_floor():
 		manage_jump()
