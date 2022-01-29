@@ -8,7 +8,6 @@ var Caracter_PosY = 200
 var Cat_bowl_PosX = 1600
 var Cat_bowl_PosY = 600
 
-
 func _ready():
 	var new_dialog = Dialogic.start("intro")
 	add_child(new_dialog)
