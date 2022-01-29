@@ -13,9 +13,6 @@ var is_alive = true
 var vel = Vector2()
 var up = Vector2(0,-1)
 
-func _ready():
-	pass
-
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
 		var gradient_death_effect = 25 if GAME.get_is_alive() else -25
@@ -62,6 +59,7 @@ func manage_gravity(delta):
 		vel.y -= (GRAVITY/2) * delta
 
 func manage_jump():
+	$CatAnimation.play("jump")
 	if GAME.get_is_alive():
 		vel.y = -JUMP
 	else:
@@ -70,15 +68,19 @@ func manage_jump():
 func movement_loop():
 	var right = Input.is_action_pressed("ui_right")
 	var left = Input.is_action_pressed("ui_left")
-	var jump = Input.is_action_just_pressed("ui_accept")
+	var jump = Input.is_action_pressed("ui_accept")
 	
 	var dirx = int(right) - int(left)
 	vel.x = dirx * max_speed
 	
-	manage_animation(dirx != 0)
-	
 	manage_flip_h(dirx)
 	manage_flip_v()
-	
-	if jump and is_on_floor():
-		manage_jump()
+	if is_on_floor():	
+		manage_animation(dirx != 0)
+		if jump == true:
+			manage_jump()
+
+func _on_CatAnimation_animation_finished():
+	if "jump".is_subsequence_of($CatAnimation.get_animation()):
+		$CatAnimation.stop()
+		$CatAnimation.set_frame(3)
