@@ -38,15 +38,12 @@ func _set_position_player():
 	
 func _set_position_cat_bowl():
 	randomize()
-	var posistionAleatoire = Vector2()
 	var aleatoire = randi() % 100
 	var is_in_dead_world = aleatoire % 2 == 0
-	posistionAleatoire.y = -Cat_bowl_PosY
+	var posistionAleatoire = Vector2(Cat_bowl_PosX, -Cat_bowl_PosY if is_in_dead_world else Cat_bowl_PosY)
 	if(is_in_dead_world):
-		posistionAleatoire.y = Cat_bowl_PosY
 		$Cat_bowl.set_rotation(deg2rad(180))
 		EVENT.emit_signal("change_cat_bowl_sprite")
-	posistionAleatoire.x = Cat_bowl_PosX
 	$Cat_bowl.position = posistionAleatoire
 
 #### SIGNALS ####
