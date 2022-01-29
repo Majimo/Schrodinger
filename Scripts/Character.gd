@@ -39,20 +39,25 @@ func _physics_process(delta):
 func manage_animation(moving):
 	if moving:
 		$CatAnimation.play("walk")
+		print("marche")
+		if !$CatWalk.is_playing():
+			$CatWalk.play()
 	else:
 		$CatAnimation.play("idle")
+		if $CatWalk.is_playing():
+			$CatWalk.stop()
 
 func manage_flip_h(dirx):
 	if dirx == 1:
 		$CatAnimation.flip_h = false
-		$CollisionShape2D.position.x = 8
+		$CollisionShape2D.position.x = POSITIONS.POS_X_RIGHT
 	elif dirx == -1:
 		$CatAnimation.flip_h = true
-		$CollisionShape2D.position.x = -7
+		$CollisionShape2D.position.x = POSITIONS.POS_X_LEFT
 
 func manage_flip_v():
 	$CatAnimation.flip_v = !GAME.get_is_alive()
-	$CollisionShape2D.position.y = 8 if GAME.get_is_alive() else -2
+	$CollisionShape2D.position.y = POSITIONS.POS_Y_UP if GAME.get_is_alive() else POSITIONS.POS_Y_DOWN
 
 func manage_gravity(delta):
 	if GAME.get_is_alive():
@@ -62,6 +67,9 @@ func manage_gravity(delta):
 
 func manage_jump():
 	$CatAnimation.play("jump")
+	if $CatWalk.is_playing():
+		$CatWalk.stop()
+	$CatJump.play()
 	if GAME.get_is_alive():
 		vel.y = -JUMP
 	else:
