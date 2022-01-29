@@ -13,6 +13,8 @@ var is_alive = true
 var vel = Vector2()
 var up = Vector2(0,-1)
 
+func _ready():
+	up = Vector2(0,1) if GAME.get_is_alive() else Vector2(0,-1)
 ## fonction fournie par défaut pour réaliser des actions 60*/secondes
 func _physics_process(delta):
 	
@@ -67,8 +69,10 @@ func manage_gravity(delta):
 func manage_jump():
 	if GAME.get_is_alive():
 		vel.y = -JUMP
+		print('is_alive jump')
 	else:
 		vel.y = JUMP
+		print('dead jump')
 
 
 func movement_loop():
@@ -83,6 +87,7 @@ func movement_loop():
 	
 	manage_flip_h(dirx)
 	manage_flip_v()
-	
+	print(is_on_floor())
+	print(jump)
 	if jump == true and is_on_floor():
 		manage_jump()
