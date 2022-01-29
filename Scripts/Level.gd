@@ -20,6 +20,8 @@ func _ready():
 		add_child(new_dialog)
 		new_dialog.connect("dialogic_signal", self, "_on_dialog_listener")
 		$Character.visible = false
+	else:
+		is_dialog_finished = true
 
 	EVENT.connect("is_alive", self, "_on_EVENT_is_alive")
 	_set_position_player()

@@ -588,7 +588,11 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
-Cat_bowl_PosY_Dead = 700
+Caracter_PosY = 150
+Cat_bowl_PosX_Alive = 978
+Cat_bowl_PosY_Alive = -795
+Cat_bowl_PosX_Dead = 1050
+Cat_bowl_PosY_Dead = 325
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -630,7 +634,7 @@ __meta__ = {
 }
 
 [node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 191, -166 )
+position = Vector2( 203, -147 )
 z_index = 1
 
 [node name="Camera2D2" type="Camera2D" parent="Character"]
@@ -642,7 +646,7 @@ __meta__ = {
 [node name="UI_Container" parent="." instance=ExtResource( 3 )]
 
 [node name="Cat_bowl" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1019, -864 )
+position = Vector2( 1050, 325 )
 
 [node name="World_life_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
@@ -651,7 +655,6 @@ autoplay = true
 
 [node name="World_death_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
-volume_db = -6.0
 autoplay = true
 
 [node name="World_back" type="Node2D" parent="."]
