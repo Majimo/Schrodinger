@@ -6,7 +6,7 @@ export var Caracter_PosY = 200
 
 # Position initial Cat_bowl
 export var Cat_bowl_PosX_Alive = 1600
-export var Cat_bowl_PosY_Alive = 600
+export var Cat_bowl_PosY_Alive = -600
 
 export var Cat_bowl_PosX_Dead = 1600
 export var Cat_bowl_PosY_Dead = 600
