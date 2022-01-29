@@ -247,9 +247,9 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 1/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 64.0002, 63.9998 )
+extents = Vector2( 192, 16 )
 
-[node name="Large_cube_death" type="RigidBody2D"]
+[node name="Plateform_death" type="RigidBody2D"]
 mode = 3
 script = ExtResource( 2 )
 
@@ -258,12 +258,13 @@ script = ExtResource( 2 )
 [node name="World_of_death" type="TileMap" parent="."]
 tile_set = SubResource( 5 )
 format = 1
-tile_data = PoolIntArray( -851911, 1, 0, -786427, 5, 0, -589826, 2, 0, -589810, 6, 0, -458761, 2, 0, -458758, 2, 0, -524285, 5, 0, -327683, 5, 0, -196615, 5, 0, -262135, 6, 0, -262130, 6, 0, -131082, 2, 0, -1, 1, 65540, -65536, 1, 4, 65535, 1, 393218, 0, 1, 327682 )
+tile_data = PoolIntArray( -851911, 1, 0, -786427, 5, 0, -589826, 2, 0, -589810, 6, 0, -458761, 2, 0, -458758, 2, 0, -524285, 5, 0, -327683, 5, 0, -196615, 5, 0, -262135, 6, 0, -262130, 6, 0, -131082, 2, 0, 65533, 1, 65538, 65534, 1, 196611, 65535, 1, 196611, 0, 1, 196611, 1, 1, 196611, 2, 1, 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.90735e-06, 0 )
+position = Vector2( 0, 48 )
 rotation = -3.14159
 shape = SubResource( 6 )
+one_way_collision = true
 one_way_collision_margin = 0.0
 
 [connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

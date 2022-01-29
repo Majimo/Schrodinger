@@ -603,6 +603,8 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
+Cat_bowl_PosX = 300
+Cat_bowl_PosY = 300
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -691,6 +693,7 @@ distance = Vector2( 150, 0 )
 
 [node name="Large_cube_life" parent="." instance=ExtResource( 13 )]
 position = Vector2( 904, -336 )
+distance = Vector2( 0, 100 )
 
 [node name="Large_cube_life2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1200, -328 )
@@ -700,6 +703,8 @@ position = Vector2( 1800, -400 )
 
 [node name="Large_cube_life3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1472, -384 )
+duration = 5
+distance = Vector2( 0, 300 )
 
 [node name="Plateform_death4" parent="." instance=ExtResource( 11 )]
 position = Vector2( 1048, 352 )

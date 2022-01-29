@@ -3,8 +3,8 @@
 [ext_resource path="res://Scripts/Cat_bowl.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Gamelle/pate_day.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=93]
-extents = Vector2( 29.6557, 29.7617 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 28, 24 )
 
 [node name="cat_bowl" type="Area2D"]
 script = ExtResource( 1 )
@@ -21,9 +21,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 93 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 4, 8 )
+shape = SubResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_cat_bowl_body_entered"]

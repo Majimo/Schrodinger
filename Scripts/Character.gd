@@ -29,8 +29,10 @@ func _physics_process(delta):
 		cat.set_position(Vector2(position.x, new_positionY))
 	manage_gravity(delta)
 	movement_loop()
+	
 	up = Vector2(0,1) if !GAME.get_is_alive() else Vector2(0,-1)
 	vel = move_and_slide(vel, up)
+	
 
 #### BUILT-IN ####
 
@@ -56,7 +58,7 @@ func manage_gravity(delta):
 	if GAME.get_is_alive():
 		vel.y += GRAVITY * delta
 	else:
-		vel.y -= (GRAVITY/2) * delta
+		vel.y -= (GRAVITY) * delta
 
 func manage_jump():
 	$CatAnimation.play("jump")
