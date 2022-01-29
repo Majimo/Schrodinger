@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Chat_de_Schroedinger_mort.mp3-2e81cbadc2e38989bb90ba787011b327.mp3str"
+
+[deps]
+
+source_file="res://Scenes/Chat_de_Schroedinger_mort.mp3"
+dest_files=[ "res://.import/Chat_de_Schroedinger_mort.mp3-2e81cbadc2e38989bb90ba787011b327.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
