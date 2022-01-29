@@ -1,0 +1,109 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/A_Button.png" type="Texture" id=1]
+[ext_resource path="res://Assets/RT_Button.png" type="Texture" id=2]
+[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/Intro.gd" type="Script" id=4]
+[ext_resource path="res://Assets/death_background.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=5]
+size = 180
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 96
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 96
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 96
+font_data = ExtResource( 3 )
+
+[node name="Intro" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -108.0 ],
+"_edit_vertical_guides_": [ 512.0, 344.0, 694.0 ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="CanvasLayer/Control"]
+margin_left = 70.0
+margin_top = 38.0
+margin_right = 957.0
+margin_bottom = 218.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Schrodinger's Cat"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Label" parent="CanvasLayer/Control"]
+margin_left = 344.0
+margin_top = 294.0
+margin_right = 594.0
+margin_bottom = 390.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "Jouer"
+
+[node name="StartButton" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 598.0
+margin_top = 294.0
+margin_right = 694.0
+margin_bottom = 390.0
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Difficulty" type="Label" parent="CanvasLayer/Control"]
+margin_left = 117.0
+margin_top = 416.0
+margin_right = 363.0
+margin_bottom = 512.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Difficulte"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DifficultyState" type="Label" parent="CanvasLayer/Control"]
+margin_left = 442.0
+margin_top = 416.0
+margin_right = 778.0
+margin_bottom = 512.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "< Facile >"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DifficultyButton" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 858.0
+margin_top = 416.0
+margin_right = 906.0
+margin_bottom = 512.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 299 )
+texture = ExtResource( 5 )

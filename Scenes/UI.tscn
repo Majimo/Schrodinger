@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
+[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+outline_size = 2
+outline_color = Color( 0, 0.172549, 0.219608, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+outline_size = 2
+outline_color = Color( 0, 0.172549, 0.219608, 1 )
+font_data = ExtResource( 2 )
 
 [node name="UI_Container" type="CanvasLayer"]
 
@@ -10,7 +23,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -23,17 +35,21 @@ __meta__ = {
 }
 
 [node name="HP" type="HBoxContainer" parent="UI/HUD"]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_right = 96.0
+margin_bottom = 64.0
 
 [node name="HPLabel" type="Label" parent="UI/HUD/HP"]
-margin_right = 26.0
-margin_bottom = 14.0
+margin_right = 72.0
+margin_bottom = 64.0
 theme = SubResource( 1 )
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "HP :"
 
 [node name="HPCounter" type="Label" parent="UI/HUD/HP"]
-margin_left = 30.0
-margin_right = 38.0
-margin_bottom = 14.0
+margin_left = 76.0
+margin_right = 96.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 3 )
 text = "9"

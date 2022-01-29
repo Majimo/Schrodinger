@@ -13,7 +13,15 @@ func get_nb_hp() -> int:
 
 func _ready():
 	EVENT.connect("hp_lost", self, "_on_EVENT_hp_lost")
+	EVENT.connect("set_hp_based_on_difficulty", self, "_on_EVENT_set_hp_based_on_difficulty")
 	
 
 func _on_EVENT_hp_lost():
 	set_nb_hp(nb_hp - 1)
+
+func _on_EVENT_set_hp_based_on_difficulty(difficulty: int):
+	if difficulty == 0:
+		set_nb_hp(9)
+	else:
+		set_nb_hp(7)
+	print(get_nb_hp())
