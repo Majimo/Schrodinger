@@ -8,6 +8,9 @@ var Caracter_PosY = 200
 var Cat_bowl_PosX = 1600
 var Cat_bowl_PosY = 600
 
+var is_dialog_finished = false
+
+
 func _ready():
 	var new_dialog = Dialogic.start("intro")
 	add_child(new_dialog)
@@ -18,6 +21,9 @@ func _ready():
 	_on_EVENT_is_alive()
 	_set_position_cat_bowl()
 
+func _physics_process(delta):
+	if (is_dialog_finished and Input.is_action_just_pressed("ui_cancel")):
+		get_tree().change_scene("res://Scenes/Intro.tscn")
 
 func _set_position_player():
 	randomize()
@@ -48,7 +54,13 @@ func _set_position_cat_bowl():
 func _on_dialog_listener(string: String):
 	match string:
 		"end_intro":
-			print("on démarre, à voir ce qu'on en fait")
+			var t = Timer.new()
+			t.set_wait_time(3)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
+			is_dialog_finished = true
 
 func _on_EVENT_is_alive():
 	if(GAME.get_is_alive()):
