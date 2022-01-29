@@ -583,11 +583,12 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 
-[node name="Level" type="YSort"]
+[node name="Level3" type="YSort"]
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
 }
+Cat_bowl_PosY_Dead = 700
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
