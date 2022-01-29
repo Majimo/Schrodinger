@@ -62,6 +62,6 @@ smoothing_enabled = true
 [node name="IdleAnimation" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 2 )
 frames = SubResource( 2 )
-frame = 18
+frame = 12
 playing = true
 flip_h = true
