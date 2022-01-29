@@ -351,21 +351,19 @@ segments = PoolVector2Array( 64, 37, 0, 37, 0, 37, 0, 0, 0, 0, 64, 0, 64, 0, 64,
 1/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 192, 16 )
+extents = Vector2( 128, 128 )
 
-[node name="platform_life" type="RigidBody2D"]
+[node name="Large_cube_life" type="RigidBody2D"]
 mode = 3
 
 [node name="World_of_life" type="TileMap" parent="."]
 tile_set = SubResource( 6 )
 cell_custom_transform = Transform2D( 128, 0, 0, 128, 0, 0 )
 format = 1
-tile_data = PoolIntArray( -3, 0, 196611, -2, 0, 65540, -1, 0, 65540, -65536, 0, 65540, -65535, 0, 65540, -65534, 0, 131075, -65511, 10, 0, -65510, 10, 0, -65509, 10, 0 )
+tile_data = PoolIntArray( -65538, 0, 327682, -65537, 0, 131076, -131072, 0, 131076, -131071, 0, 262146, -2, 0, 65538, -1, 0, 327680, -65536, 0, 327680, -65535, 0, 2, -65511, 10, 0, -65510, 10, 0, -65509, 10, 0, 65534, 0, 65538, 65535, 0, 327680, 0, 0, 327680, 1, 0, 2, 131070, 0, 196609, 131071, 0, 393216, 65536, 0, 393216, 65537, 0, 131073 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -48 )
 shape = SubResource( 7 )
-one_way_collision = true
 one_way_collision_margin = 0.0
 
 [node name="Tween" type="Tween" parent="."]
