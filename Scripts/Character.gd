@@ -79,8 +79,6 @@ func movement_loop():
 	
 	manage_flip_h(dirx)
 	manage_flip_v()
-	if jump:
-		print(is_on_floor())
-		print(is_on_ceiling())
+	
 	if jump and is_on_floor():
 		manage_jump()
