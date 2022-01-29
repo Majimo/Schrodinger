@@ -14,8 +14,8 @@ func _ready():
 	new_dialog.connect("dialogic_signal", self, "dialog_listener")
 
 	EVENT.connect("is_alive", self, "_on_EVENT_is_alive")
-	_on_EVENT_is_alive()
 	_set_position_player()
+	_on_EVENT_is_alive()
 	_set_position_cat_bowl()
 
 
