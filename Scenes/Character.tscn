@@ -19,7 +19,8 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-current = true
+visible = false
+position = Vector2( -2, -99 )
+zoom = Vector2( 1.5, 1.5 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
-smoothing_enabled = true
