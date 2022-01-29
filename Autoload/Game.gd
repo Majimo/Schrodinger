@@ -18,6 +18,9 @@ func set_is_alive(value: bool):
 		is_alive = value
 		EVENT.emit_signal("is_alive_changed", is_alive)
 
+func get_is_alive() -> bool:
+	return is_alive 
+	
 func _ready():
 	EVENT.connect("hp_lost", self, "_on_EVENT_hp_lost")
 	EVENT.connect("is_alive", self, "_on_EVENT_is_alive")
