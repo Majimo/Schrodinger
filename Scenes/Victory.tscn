@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Victory.gd" type="Script" id=1]
 [ext_resource path="res://Assets/death_background.png" type="Texture" id=2]
@@ -9,6 +9,18 @@
 size = 180
 font_data = ExtResource( 4 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 96
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 96
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 96
+font_data = ExtResource( 4 )
+
 [sub_resource type="DynamicFont" id=2]
 size = 96
 font_data = ExtResource( 4 )
@@ -16,8 +28,8 @@ font_data = ExtResource( 4 )
 [node name="Victory" type="CanvasLayer"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 358.0 ],
-"_edit_vertical_guides_": [ 512.0 ]
+"_edit_horizontal_guides_": [ 292.0 ],
+"_edit_vertical_guides_": [ 771.0 ]
 }
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -43,21 +55,58 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Level1" type="Label" parent="Control"]
+margin_left = 242.0
+margin_top = 244.0
+margin_right = 332.0
+margin_bottom = 340.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "-1-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Label" parent="Control"]
+margin_left = 468.0
+margin_top = 245.0
+margin_right = 558.0
+margin_bottom = 341.0
+custom_fonts/font = SubResource( 4 )
+text = "-2-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Label" parent="Control"]
+margin_left = 681.0
+margin_top = 245.0
+margin_right = 771.0
+margin_bottom = 341.0
+custom_fonts/font = SubResource( 5 )
+text = "-3-"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="Control"]
-margin_left = 334.0
-margin_top = 309.0
-margin_right = 538.0
-margin_bottom = 405.0
+margin_left = 307.0
+margin_top = 391.0
+margin_right = 553.0
+margin_bottom = 487.0
 custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "§Rejouer"
+text = "Continuer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 587.0
-margin_top = 309.0
-margin_right = 683.0
-margin_bottom = 405.0
+margin_left = 599.0
+margin_top = 391.0
+margin_right = 695.0
+margin_bottom = 487.0
 texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

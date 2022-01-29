@@ -39,7 +39,6 @@ func _physics_process(delta):
 func manage_animation(moving):
 	if moving:
 		$CatAnimation.play("walk")
-		print("marche")
 		if !$CatWalk.is_playing():
 			$CatWalk.play()
 	else:

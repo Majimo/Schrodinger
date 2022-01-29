@@ -15,7 +15,7 @@ func _physics_process(delta):
 			difficulty_state.set_text("< Facile >")
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		get_tree().change_scene("res://Scenes/Level.tscn")
+		get_tree().change_scene("res://Scenes/Level1.tscn")
 		
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().change_scene("res://Scenes/Tuto.tscn")
