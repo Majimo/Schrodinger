@@ -27,7 +27,5 @@ func manage_gravity(delta):
 		vel.y -= (GRAVITY/2) * delta
 
 
-
-
 func _on_cat_bowl_body_entered(body):
 	get_tree().change_scene("res://Scenes/Victory.tscn") # Replace with function body.
