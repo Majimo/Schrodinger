@@ -91,7 +91,7 @@ func movement_loop():
 ## permet de gérer la position verticale
 ## dans laquelle le personnage est affiché
 func toggle_flip_v():
-	$Sprite.flip_v = !is_alive
-	$IdleAnimation.flip_v = !is_alive
-	$IdleAnimation.set_modulate(COLORS.cat_alive if is_alive else COLORS.cat_dead)
-	$CollisionShape2D.position.y = POSITION.POS_Y_UP if is_alive else POSITION.POS_Y_DOWN
+	$Sprite.flip_v = !GAME.get_is_alive()
+	$IdleAnimation.flip_v = !GAME.get_is_alive()
+	$IdleAnimation.set_modulate(COLORS.cat_alive if GAME.get_is_alive() else COLORS.cat_dead)
+	$CollisionShape2D.position.y = POSITION.POS_Y_UP if GAME.get_is_alive() else POSITION.POS_Y_DOWN
