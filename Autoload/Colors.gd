@@ -18,3 +18,6 @@ var m_rodeodust = '#c4ac9c'
 var n_eunry = '#d8b0a8'
 var o_oysterpink = '#ecd4d0'
 var p_white = '#fcfcfc'
+
+var cat_alive= '#ffffff'
+var cat_dead= 'd11adc66'

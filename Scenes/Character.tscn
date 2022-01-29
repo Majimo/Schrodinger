@@ -27,7 +27,7 @@
 [ext_resource path="res://Assets/cat-idle_00022.png" type="Texture" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 46, 50.75 )
+extents = Vector2( 46, 48.875 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -48,11 +48,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 show_behind_parent = true
-position = Vector2( -7, 8 )
+position = Vector2( -7, 5 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2( -2, -99 )
 zoom = Vector2( 1.5, 1.5 )
 drag_margin_h_enabled = true
@@ -62,5 +61,5 @@ smoothing_enabled = true
 [node name="IdleAnimation" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 2 )
 frames = SubResource( 2 )
-frame = 21
+frame = 7
 playing = true

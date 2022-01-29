@@ -31,6 +31,7 @@ func _physics_process(delta):
 		if !GAME.get_is_alive():
 			EVENT.emit_signal("hp_lost")
 		cat.set_position(Vector2(position.x, new_positionY))
+		toggle_flip_v()
 	manage_gravity(delta)
 	movement_loop()
 	
@@ -55,13 +56,6 @@ func manage_flip_h(dirx):
 		$Sprite.flip_h = true
 		$IdleAnimation.flip_h = true
 		$CollisionShape2D.position.x = POSITION.POS_X_LEFT
-
-## permet de gérer la position verticale
-## dans laquelle le personnage est affiché
-func manage_flip_v():
-	$Sprite.flip_v = !is_alive
-	$IdleAnimation.flip_v = !is_alive
-	$CollisionShape2D.position.y = POSITION.POS_Y_UP if is_alive else POSITION.POS_Y_DOWN
 
 ## gère la gravité selon que le personnage est vivant ou mort
 ## vers le bas pour le monde des vivants et vers le haut pour le monde des morts
@@ -90,7 +84,14 @@ func movement_loop():
 	manage_animation(dirx != 0)
 	
 	manage_flip_h(dirx)
-	manage_flip_v()
 	
 	if jump == true and is_on_floor():
 		manage_jump()
+
+## permet de gérer la position verticale
+## dans laquelle le personnage est affiché
+func toggle_flip_v():
+	$Sprite.flip_v = !is_alive
+	$IdleAnimation.flip_v = !is_alive
+	$IdleAnimation.set_modulate(COLORS.cat_alive if is_alive else COLORS.cat_dead)
+	$CollisionShape2D.position.y = POSITION.POS_Y_UP if is_alive else POSITION.POS_Y_DOWN
