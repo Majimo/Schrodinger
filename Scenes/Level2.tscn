@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/day_background.png" type="Texture" id=7]
 [ext_resource path="res://sound/Chat_de_Schroedinger_mort.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
-[ext_resource path="res://sound/Chat_de_Schroedinger.mp3" type="AudioStream" id=10]
+[ext_resource path="res://sound/Chat_de_Schroedinger_monde_de_la_vie_ogg.ogg" type="AudioStream" id=10]
 [ext_resource path="res://Scenes/Shared/Plateform_death.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Shared/platform_life.tscn" type="PackedScene" id=12]
 
@@ -645,7 +645,7 @@ position = Vector2( 712, -592 )
 
 [node name="World_life_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -6.0
+volume_db = -8.0
 autoplay = true
 
 [node name="World_death_sound" type="AudioStreamPlayer" parent="."]

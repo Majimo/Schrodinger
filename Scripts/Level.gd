@@ -15,10 +15,11 @@ var is_dialog_finished = false
 
 
 func _ready():
-	var new_dialog = Dialogic.start("intro")
-	add_child(new_dialog)
-	new_dialog.connect("dialogic_signal", self, "_on_dialog_listener")
-	$Character.visible = false
+	if !GAME.get_can_move():
+		var new_dialog = Dialogic.start("intro")
+		add_child(new_dialog)
+		new_dialog.connect("dialogic_signal", self, "_on_dialog_listener")
+		$Character.visible = false
 
 	EVENT.connect("is_alive", self, "_on_EVENT_is_alive")
 	_set_position_player()

@@ -39,7 +39,6 @@ func _physics_process(delta):
 func manage_animation(moving):
 	if moving:
 		$CatAnimation.play("walk")
-		print("marche")
 		if !$CatWalk.is_playing():
 			$CatWalk.play()
 	else:
@@ -81,9 +80,7 @@ func movement_loop():
 	var jump = Input.is_action_pressed("ui_accept")
 	
 	var dirx = int(right) - int(left)
-	print(dirx)
-	print(max_speed)
-	vel.x = dirx * max_speed
+	vel.x = dirx * 200
 	
 	manage_flip_h(dirx)
 	manage_flip_v()
