@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Cat_bowl.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=93]
+extents = Vector2( 29.6557, 29.7617 )
+
+[node name="cat_bowl" type="Area2D"]
+position = Vector2( -376, -200 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.662745, 0.0941176, 0.0941176, 1 )
+light_mask = 0
+rotation = 0.872665
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.872665
+shape = SubResource( 93 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[connection signal="body_entered" from="." to="." method="_on_cat_bowl_body_entered"]
