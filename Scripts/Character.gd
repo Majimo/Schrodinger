@@ -39,38 +39,46 @@ func _physics_process(delta):
 
 #### BUILT-IN ####
 
+## permet de switcher les sprites visibles selon le type de mouvement
 func manage_animation(moving):
 	$IdleAnimation.visible = !moving
 	$Sprite.visible = moving
 
+## permet de gérer la direction horizontale 
+## dans laquelle le personnage est affiché
 func manage_flip_h(dirx):
 	if dirx == 1:
 		$Sprite.flip_h = false
 		$IdleAnimation.flip_h = false
-		$CollisionShape2D.position.x = 8
+		$CollisionShape2D.position.x = POSITION.POS_X_RIGHT
 	elif dirx == -1:
 		$Sprite.flip_h = true
 		$IdleAnimation.flip_h = true
-		$CollisionShape2D.position.x = -7
+		$CollisionShape2D.position.x = POSITION.POS_X_LEFT
 
+## permet de gérer la position verticale
+## dans laquelle le personnage est affiché
 func manage_flip_v():
-	$Sprite.flip_v = !GAME.get_is_alive()
-	$IdleAnimation.flip_v = !GAME.get_is_alive()
-	$CollisionShape2D.position.y = 8 if GAME.get_is_alive() else -2
+	$Sprite.flip_v = !is_alive
+	$IdleAnimation.flip_v = !is_alive
+	$CollisionShape2D.position.y = POSITION.POS_Y_UP if is_alive else POSITION.POS_Y_DOWN
 
+## gère la gravité selon que le personnage est vivant ou mort
+## vers le bas pour le monde des vivants et vers le haut pour le monde des morts
 func manage_gravity(delta):
 	if GAME.get_is_alive():
 		vel.y += GRAVITY * delta
 	else:
 		vel.y -= (GRAVITY/2) * delta
 
+## fait sauter le chat dans bon sens selon le monde dans lequel il se trouve
 func manage_jump():
 	if GAME.get_is_alive():
 		vel.y = -JUMP
 	else:
 		vel.y = JUMP
 
-
+## récupère les actions utilisateurs pour gérer les mouvements du personnage
 func movement_loop():
 	var right = Input.is_action_pressed("ui_right")
 	var left = Input.is_action_pressed("ui_left")

@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 GAME="*res://Autoload/Game.gd"
 EVENT="*res://Autoload/Event.gd"
 COLORS="*res://Autoload/Colors.gd"
+POSITION="*res://Autoload/Position.gd"
 
 [input]
 
