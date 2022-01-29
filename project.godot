@@ -72,6 +72,7 @@ GAME="*res://Autoload/Game.gd"
 EVENT="*res://Autoload/Event.gd"
 COLORS="*res://Autoload/Colors.gd"
 POSITIONS="*res://Autoload/Positions.gd"
+POSITION="*res://Autoload/Position.gd"
 
 [editor_plugins]
 
