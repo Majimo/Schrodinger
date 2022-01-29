@@ -63,7 +63,7 @@ func manage_gravity(delta):
 	if GAME.get_is_alive():
 		vel.y += GRAVITY * delta
 	else:
-		vel.y -= (GRAVITY) * delta
+		vel.y -= (GRAVITY/2) * delta
 
 func manage_jump():
 	$CatAnimation.play("jump")
