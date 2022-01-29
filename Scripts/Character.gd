@@ -18,12 +18,16 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
 		var gradient_death_effect = 25 if is_alive else -25
 		var new_positionY = (-position.y) + gradient_death_effect
+		var new_positionX = position.x
 		up = Vector2(0,1) if is_alive else Vector2(0,-1)
-		cat.set_position(Vector2(position.x, new_positionY))
 		is_alive = !is_alive
 		if !is_alive:
 			EVENT.emit_signal("hp_lost")
-		
+		if is_on_floor():
+			new_positionX+= gradient_death_effect
+		if is_on_wall():
+			new_positionY+= gradient_death_effect
+		cat.set_position(Vector2(position.x, new_positionY))
 	manage_gravity(delta)
 	movement_loop()
 	
