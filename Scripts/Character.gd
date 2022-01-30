@@ -16,7 +16,7 @@ var up = Vector2(0,-1)
 func _physics_process(delta):
 	manage_gravity(delta)
 	if GAME.get_can_move():
-		if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
+		if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > -2:
 			var gradient_death_effect = 25 if GAME.get_is_alive() else -25
 			var new_positionY = position.y
 			var new_positionX = position.x
@@ -28,6 +28,8 @@ func _physics_process(delta):
 			EVENT.emit_signal("is_alive")
 			if !GAME.get_is_alive():
 				EVENT.emit_signal("hp_lost")
+			if !GAME.get_is_alive() && GAME.get_nb_hp() == -1:
+				get_tree().change_scene("res://Scenes/GameOver.tscn")
 			cat.set_position(Vector2(position.x, new_positionY))
 		movement_loop()
 	up = Vector2(0,1) if !GAME.get_is_alive() else Vector2(0,-1)

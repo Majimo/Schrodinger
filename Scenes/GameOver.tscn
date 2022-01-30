@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/death_background.png" type="Texture" id=1]
+[ext_resource path="res://Assets/jmj.png" type="Texture" id=2]
+[ext_resource path="res://Assets/A_Button.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=4]
+[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 96
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 72
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 96
+font_data = ExtResource( 5 )
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 474.0 ],
+"_edit_vertical_guides_": [ 512.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+margin_left = 185.0
+margin_top = 28.0
+margin_right = 761.0
+margin_bottom = 124.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Mince... C'est perdu !"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control"]
+margin_left = 70.0
+margin_top = 154.0
+margin_right = 874.0
+margin_bottom = 301.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Voila quand même un Jean-Michel JAM
+pour te remonter le moral ;)"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control"]
+margin_left = 239.0
+margin_top = 426.0
+margin_right = 581.0
+margin_bottom = 522.0
+custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Recommencer"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+margin_left = 608.0
+margin_top = 426.0
+margin_right = 704.0
+margin_bottom = 522.0
+texture = ExtResource( 3 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 929, 515 )
+scale = Vector2( 1.11967, 1.11967 )
+texture = ExtResource( 2 )
