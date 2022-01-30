@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Chat_de_Schroedinger_Welcome.mp3-ebc9656ca7373a366c32bbe02332299c.mp3str"
+
+[deps]
+
+source_file="res://sound/Chat_de_Schroedinger_Welcome.mp3"
+dest_files=[ "res://.import/Chat_de_Schroedinger_Welcome.mp3-ebc9656ca7373a366c32bbe02332299c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

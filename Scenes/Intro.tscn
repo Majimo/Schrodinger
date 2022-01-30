@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/A_Button.png" type="Texture" id=1]
 [ext_resource path="res://Assets/RT_Button.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/death_background.png" type="Texture" id=5]
 [ext_resource path="res://Assets/schrodinger_bis.png" type="Texture" id=6]
 [ext_resource path="res://Assets/B_Button.png" type="Texture" id=7]
+[ext_resource path="res://sound/Chat_de_Schroedinger_Welcome.mp3" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=5]
 size = 180
@@ -145,3 +146,7 @@ modulate = Color( 1, 1, 1, 0.560784 )
 position = Vector2( 849.918, 348.918 )
 scale = Vector2( 2.29623, 2.29623 )
 texture = ExtResource( 6 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
