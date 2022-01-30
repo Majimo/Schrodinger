@@ -13,11 +13,11 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/cat-idle_00000.png"
+			"path": "res://Assets/cat.png"
 		},
 		{
 			"name": "Amused",
-			"path": "res://Assets/cat-idle_00011.png"
+			"path": "res://Assets/cat.png"
 		}
 	],
 	"scale": 100,
