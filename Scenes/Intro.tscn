@@ -1,34 +1,34 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Assets/A_Button.png" type="Texture" id=1]
-[ext_resource path="res://Assets/RT_Button.png" type="Texture" id=2]
-[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/New_B.png" type="Texture" id=1]
+[ext_resource path="res://Assets/intro_background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/New_A.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Intro.gd" type="Script" id=4]
-[ext_resource path="res://Assets/death_background.png" type="Texture" id=5]
+[ext_resource path="res://Assets/New_RT.png" type="Texture" id=5]
 [ext_resource path="res://Assets/schrodinger_bis.png" type="Texture" id=6]
-[ext_resource path="res://Assets/B_Button.png" type="Texture" id=7]
-[ext_resource path="res://sound/Chat_de_Schroedinger_theme.ogg" type="AudioStream" id=8]
+[ext_resource path="res://Font/Roboto-Light.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Font/Barrio-Regular.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=5]
-size = 180
-font_data = ExtResource( 3 )
+size = 101
+font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
-size = 72
-font_data = ExtResource( 3 )
+size = 55
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 72
-font_data = ExtResource( 3 )
+size = 55
+font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 72
-font_data = ExtResource( 3 )
+size = 55
+font_data = ExtResource( 7 )
 
 [node name="Intro" type="Node2D"]
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 387.0 ],
+"_edit_horizontal_guides_": [ 511.0 ],
 "_edit_vertical_guides_": [ 70.0 ]
 }
 
@@ -46,7 +46,7 @@ margin_left = 70.0
 margin_top = 38.0
 margin_right = 957.0
 margin_bottom = 218.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "Schrodinger's Cat"
 __meta__ = {
@@ -58,7 +58,7 @@ margin_left = 71.0
 margin_top = 352.0
 margin_right = 271.0
 margin_bottom = 424.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "Jouer"
 __meta__ = {
@@ -70,7 +70,7 @@ margin_left = 359.0
 margin_top = 352.0
 margin_right = 559.0
 margin_bottom = 424.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 text = "Tutoriel"
 __meta__ = {
@@ -78,23 +78,23 @@ __meta__ = {
 }
 
 [node name="StartButton" type="TextureRect" parent="CanvasLayer/Control"]
-margin_left = 233.0
-margin_top = 351.0
-margin_right = 329.0
-margin_bottom = 447.0
-rect_scale = Vector2( 0.75, 0.75 )
-texture = ExtResource( 1 )
+margin_left = 218.0
+margin_top = 335.0
+margin_right = 289.0
+margin_bottom = 405.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TutoButton" type="TextureRect" parent="CanvasLayer/Control"]
-margin_left = 537.0
-margin_top = 351.0
-margin_right = 751.0
-margin_bottom = 561.0
-rect_scale = Vector2( 0.375, 0.375 )
-texture = ExtResource( 7 )
+margin_left = 554.0
+margin_top = 336.0
+margin_right = 625.0
+margin_bottom = 406.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,7 +104,7 @@ margin_left = 72.0
 margin_top = 475.0
 margin_right = 266.0
 margin_bottom = 547.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Difficulte"
 __meta__ = {
@@ -112,11 +112,11 @@ __meta__ = {
 }
 
 [node name="DifficultyState" type="Label" parent="CanvasLayer/Control"]
-margin_left = 281.0
-margin_top = 475.0
-margin_right = 571.0
-margin_bottom = 547.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+margin_left = 287.0
+margin_top = 476.0
+margin_right = 577.0
+margin_bottom = 548.0
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 4 )
 text = "< Facile >"
 align = 1
@@ -125,24 +125,24 @@ __meta__ = {
 }
 
 [node name="DifficultyButton" type="TextureRect" parent="CanvasLayer/Control"]
-margin_left = 587.0
-margin_top = 462.0
-margin_right = 635.0
-margin_bottom = 558.0
-texture = ExtResource( 2 )
+margin_left = 558.0
+margin_top = 458.0
+margin_right = 629.0
+margin_bottom = 528.0
+rect_scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 512, 299 )
-texture = ExtResource( 5 )
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sprite2" type="Sprite" parent="."]
-modulate = Color( 1, 1, 1, 0.560784 )
 position = Vector2( 849.918, 348.918 )
 scale = Vector2( 2.29623, 2.29623 )
 texture = ExtResource( 6 )

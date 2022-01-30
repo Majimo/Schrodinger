@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/schrodinger.png-1cae209dbb84181e022f4d24d35101db.stex"
+path="res://.import/New_RT.png-cf21c69d32f540d328d0d6aad3f97492.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/schrodinger.png"
-dest_files=[ "res://.import/schrodinger.png-1cae209dbb84181e022f4d24d35101db.stex" ]
+source_file="res://Assets/New_RT.png"
+dest_files=[ "res://.import/New_RT.png-cf21c69d32f540d328d0d6aad3f97492.stex" ]
 
 [params]
 

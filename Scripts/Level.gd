@@ -15,9 +15,14 @@ var is_dialog_finished = false
 
 
 func _ready():
-	if !GAME.get_can_move():
+	if "res://Scenes/Tuto.tscn".is_subsequence_of(get_tree().current_scene.filename):
+		EVENT.emit_signal("can_move")
+		is_dialog_finished = true
+	elif !GAME.get_can_move():
 		var new_dialog = Dialogic.start("intro")
+		print("yo")
 		add_child(new_dialog)
+		print("yop")
 		new_dialog.connect("dialogic_signal", self, "_on_dialog_listener")
 		$Character.visible = false
 	else:

@@ -9,11 +9,11 @@ onready var level3 = $Control/Level3
 
 
 func _ready():
-	level1.set("custom_colors/font_color", Color(COLORS.e_elephant))
-	level2.set("custom_colors/font_color", Color(COLORS.m_rodeodust))
-	level3.set("custom_colors/font_color", Color(COLORS.m_rodeodust))
+	level1.set("custom_colors/font_color", Color(COLORS.darkorange))
+	level2.set("custom_colors/font_color", Color(COLORS.darkorange))
+	level3.set("custom_colors/font_color", Color(COLORS.darkorange))
 	level1.get("custom_fonts/font").set_outline_size(4)
-	level1.get("custom_fonts/font").set_outline_color(Color(COLORS.p_white))
+	level1.get("custom_fonts/font").set_outline_color(Color(COLORS.lightorange))
 
 func _physics_process(delta):
 	if(Input.is_action_just_pressed("ui_accept")):
@@ -31,22 +31,22 @@ func select_level_from_list():
 	level1.get("custom_fonts/font").set_outline_size(0)
 	level2.get("custom_fonts/font").set_outline_size(0)
 	level3.get("custom_fonts/font").set_outline_size(0)
-	level1.set("custom_colors/font_color", Color(COLORS.m_rodeodust))
-	level2.set("custom_colors/font_color", Color(COLORS.m_rodeodust))
-	level3.set("custom_colors/font_color", Color(COLORS.m_rodeodust))
+	level1.set("custom_colors/font_color", Color(COLORS.darkorange))
+	level2.set("custom_colors/font_color", Color(COLORS.darkorange))
+	level3.set("custom_colors/font_color", Color(COLORS.darkorange))
 	match_selected_level(selected_level)
 
 func match_selected_level(selected_level: int):
 	match selected_level:
 		1:
-			level1.set("custom_colors/font_color", Color(COLORS.e_elephant))
+			level1.set("custom_colors/font_color", Color(COLORS.darkorange))
 			level1.get("custom_fonts/font").set_outline_size(4)
-			level1.get("custom_fonts/font").set_outline_color(Color(COLORS.p_white))
+			level1.get("custom_fonts/font").set_outline_color(Color(COLORS.lightorange))
 		2:
-			level2.set("custom_colors/font_color", Color(COLORS.e_elephant))
+			level2.set("custom_colors/font_color", Color(COLORS.darkorange))
 			level2.get("custom_fonts/font").set_outline_size(4)
-			level2.get("custom_fonts/font").set_outline_color(Color(COLORS.p_white))
+			level2.get("custom_fonts/font").set_outline_color(Color(COLORS.lightorange))
 		3:
-			level3.set("custom_colors/font_color", Color(COLORS.e_elephant))
+			level3.set("custom_colors/font_color", Color(COLORS.darkorange))
 			level3.get("custom_fonts/font").set_outline_size(4)
-			level3.get("custom_fonts/font").set_outline_color(Color(COLORS.p_white))
+			level3.get("custom_fonts/font").set_outline_color(Color(COLORS.lightorange))
