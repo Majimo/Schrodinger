@@ -21,7 +21,7 @@
 			"character": "character-1643456471.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
-			"text": "Mais... Mais... Ou suis-je ?"
+			"text": "Mais... Mais... Où suis-je ?"
 		},
 		{
 			"action": "join",
@@ -44,19 +44,19 @@
 			"character": "character-1643457142.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Tu es dans ma boite... Je suis sympa, je t'ai laisse a manger !"
+			"text": "Tu es dans ma boîte... Je suis sympa, je t'ai laissé à manger !"
 		},
 		{
 			"character": "character-1643456471.json",
 			"event_id": "dialogic_001",
 			"portrait": "Amused",
-			"text": "Bon, plus qu'a trouver cette gamelle. \nMais... Je suis mort...? Je suis vivant...? Je ne sais plus !"
+			"text": "Bon, plus qu'à trouver cette gamelle. \nMais... Je suis mort...? Je suis vivant...?\nJe ne sais plus !"
 		},
 		{
 			"character": "character-1643457142.json",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Humm... Tu n'es ni mort ni vivant ! \nEnfin, tant que je n'ouvre pas la boite, je ne saurai pas !"
+			"text": "Humm... Tu n'es ni mort ni vivant ! \nEnfin, tant que je n'ouvre pas la boîte, je ne le saurai pas !"
 		},
 		{
 			"character": "character-1643456471.json",

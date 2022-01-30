@@ -2,7 +2,6 @@
 
 [ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/intro_background.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/cat_bowl.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/tileSetJour.png" type="Texture" id=5]
 [ext_resource path="res://Assets/tileSetDeath.png" type="Texture" id=6]
@@ -599,6 +598,12 @@ outline_size = 1
 outline_color = Color( 1, 0.2, 0, 1 )
 font_data = ExtResource( 17 )
 
+[sub_resource type="DynamicFont" id=9]
+size = 48
+outline_size = 1
+outline_color = Color( 1, 0.2, 0, 1 )
+font_data = ExtResource( 17 )
+
 [node name="Tuto" type="YSort"]
 script = ExtResource( 9 )
 __meta__ = {
@@ -653,8 +658,6 @@ current = true
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="UI_Container" parent="." instance=ExtResource( 3 )]
 
 [node name="Cat_bowl" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1840, -584 )
@@ -717,7 +720,18 @@ position = Vector2( 1800, 240 )
 [node name="TutoTraitement" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -423.0
 script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutoTraitement"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_top = -416.0
+margin_right = 1024.0
+margin_bottom = 184.0
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -742,7 +756,7 @@ margin_bottom = 57.0
 theme = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "Bouger le chat de gauche a droite"
+text = "Bouger le chat de gauche à droite"
 align = 1
 
 [node name="HUD_saut" type="VBoxContainer" parent="CanvasLayer/TutoTraitement"]
@@ -760,13 +774,13 @@ margin_bottom = 60.0
 alignment = 1
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/TutoTraitement/HUD_saut/HP"]
-margin_left = 301.0
-margin_right = 723.0
+margin_left = 300.0
+margin_right = 724.0
 margin_bottom = 57.0
 theme = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "Faite sauter le chat :"
+text = "Faites sauter le chat"
 align = 1
 
 [node name="HUD_changer_monde" type="VBoxContainer" parent="CanvasLayer/TutoTraitement"]
@@ -790,8 +804,19 @@ margin_bottom = 57.0
 theme = SubResource( 7 )
 custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "Faites changer de dimension le chat"
+text = "Faites changer le chat de dimension"
 align = 1
+
+[node name="GoForGamelle" type="Label" parent="CanvasLayer/TutoTraitement"]
+margin_right = 1023.0
+margin_bottom = 57.0
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Bien, maintenant plus qu'à trouver la gamelle !"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AButton" type="Sprite" parent="CanvasLayer/TutoTraitement"]
 position = Vector2( 528, 120 )
