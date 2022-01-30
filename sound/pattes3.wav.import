@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pattes3.wav-640f84b224bfd3c743b3c3ff2cde9b20.sample"
+
+[deps]
+
+source_file="res://sound/pattes3.wav"
+dest_files=[ "res://.import/pattes3.wav-640f84b224bfd3c743b3c3ff2cde9b20.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
