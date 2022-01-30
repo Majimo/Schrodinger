@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Victory.gd" type="Script" id=1]
 [ext_resource path="res://Assets/death_background.png" type="Texture" id=2]
 [ext_resource path="res://Assets/A_Button.png" type="Texture" id=3]
 [ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://sound/Chat_de_Schroedinger_theme.ogg" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 180
@@ -110,3 +111,6 @@ texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
