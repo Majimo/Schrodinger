@@ -694,7 +694,7 @@ distance = Vector2( 150, 0 )
 [node name="Large_cube_life" parent="." instance=ExtResource( 13 )]
 position = Vector2( 904, -336 )
 duration = 5
-distance = Vector2(0, 300)
+distance = Vector2( 0, 300 )
 
 [node name="Large_cube_life2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1200, -328 )
