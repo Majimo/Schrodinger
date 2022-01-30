@@ -7,7 +7,7 @@
 [ext_resource path="res://Assets/death_background.png" type="Texture" id=5]
 [ext_resource path="res://Assets/schrodinger_bis.png" type="Texture" id=6]
 [ext_resource path="res://Assets/B_Button.png" type="Texture" id=7]
-[ext_resource path="res://sound/Chat_de_Schroedinger_Welcome.mp3" type="AudioStream" id=8]
+[ext_resource path="res://sound/Chat_de_Schroedinger_theme.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=5]
 size = 180
