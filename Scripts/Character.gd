@@ -12,25 +12,27 @@ var max_speed = 200
 var is_alive = true
 var vel = Vector2()
 var up = Vector2(0,-1)
+var have_been_kill = false
 
 func _physics_process(delta):
+	if have_been_kill:
+		var gradient_death_effect = 25 if GAME.get_is_alive() else -25
+		position = _collison(gradient_death_effect, position)
+
 	manage_gravity(delta)
 	if GAME.get_can_move():
 		if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > -2:
+			have_been_kill = true
 			var gradient_death_effect = 25 if GAME.get_is_alive() else -25
-			var new_positionY = position.y
-			var new_positionX = position.x
-			if is_on_floor():
-				new_positionX += gradient_death_effect
-			if is_on_wall():
-				new_positionY -= gradient_death_effect
-			new_positionY = (-position.y) + gradient_death_effect
+			var newPos = Vector2()
+			position.y = (-position.y) + gradient_death_effect
+			newPos = _collison(gradient_death_effect, position)
 			EVENT.emit_signal("is_alive")
 			if !GAME.get_is_alive():
 				EVENT.emit_signal("hp_lost")
 			if !GAME.get_is_alive() && GAME.get_nb_hp() == -1:
 				get_tree().change_scene("res://Scenes/GameOver.tscn")
-			cat.set_position(Vector2(position.x, new_positionY))
+			cat.set_position(newPos)
 		movement_loop()
 	up = Vector2(0,1) if cat_is_in_dead_world() else Vector2(0,-1)
 	vel = move_and_slide(vel, up)
@@ -95,6 +97,21 @@ func _on_CatAnimation_animation_finished():
 	if "jump".is_subsequence_of($CatAnimation.get_animation()):
 		$CatAnimation.stop()
 		$CatAnimation.set_frame(3)
+
+func _collison(gradient_death_effect, position):
+	print(have_been_kill)
+	var pos = Vector2()
+	pos.x= position.x
+	pos.y = position.y
+	if is_on_floor() || is_on_ceiling():
+		print('floor')
+		pos.y -= gradient_death_effect *3
+	if is_on_wall():
+		print('wall')
+		pos.x -= gradient_death_effect *3
+	if(!is_on_ceiling() && !is_on_wall()) && !is_on_floor():
+		have_been_kill = false
+	return pos
 
 func cat_is_in_dead_world() -> bool:
 	return cat.position.y > 0
