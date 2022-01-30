@@ -587,7 +587,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 Cat_bowl_PosY_Alive = -538
-Cat_bowl_PosY_Dead = 470
+Cat_bowl_PosY_Dead = 468
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
