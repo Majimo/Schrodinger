@@ -18,3 +18,8 @@ var m_rodeodust = '#c4ac9c'
 var n_eunry = '#d8b0a8'
 var o_oysterpink = '#ecd4d0'
 var p_white = '#fcfcfc'
+
+var darkblue = '000099'
+var darkorange = 'ff3300'
+var lightorange = 'ffbdad'
+var lightblue = '7d8fff'

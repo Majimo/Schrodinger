@@ -1,20 +1,20 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=1]
-[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Font/Roboto-Light.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="DynamicFont" id=2]
-size = 64
+size = 40
 outline_size = 2
-outline_color = Color( 0, 0.172549, 0.219608, 1 )
+outline_color = Color( 0, 0, 0.6, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 64
+size = 40
 outline_size = 2
-outline_color = Color( 0, 0.172549, 0.219608, 1 )
+outline_color = Color( 0, 0, 0.6, 1 )
 font_data = ExtResource( 2 )
 
 [node name="UI_Container" type="CanvasLayer"]
@@ -35,21 +35,21 @@ __meta__ = {
 }
 
 [node name="HP" type="HBoxContainer" parent="UI/HUD"]
-margin_right = 96.0
-margin_bottom = 64.0
+margin_right = 117.0
+margin_bottom = 48.0
 
 [node name="HPLabel" type="Label" parent="UI/HUD/HP"]
-margin_right = 72.0
-margin_bottom = 64.0
+margin_right = 81.0
+margin_bottom = 48.0
 theme = SubResource( 1 )
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "HP :"
+text = " HP :"
 
 [node name="HPCounter" type="Label" parent="UI/HUD/HP"]
-margin_left = 76.0
-margin_right = 96.0
-margin_bottom = 64.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+margin_left = 85.0
+margin_right = 117.0
+margin_bottom = 48.0
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "9"
+text = " 9"

@@ -16,6 +16,7 @@ func _physics_process(delta):
 	if(!mvt_validated && !jump_validated && !transition_validated):
 		if(Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
 			$Dpad.visible = false
+			$Dpad2.visible = false
 			$HUD_deplacement.visible = false
 			mvt_validated = true
 			$AButton.visible = true
