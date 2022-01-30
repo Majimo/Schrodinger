@@ -1,12 +1,11 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/death_background.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/intro_background.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/cat_bowl.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/tileSetJour.png" type="Texture" id=5]
 [ext_resource path="res://Assets/tileSetDeath.png" type="Texture" id=6]
-[ext_resource path="res://Assets/day_background.png" type="Texture" id=7]
+[ext_resource path="res://Assets/New_A.png" type="Texture" id=7]
 [ext_resource path="res://sound/Chat_de_Schroedinger_mort.mp3" type="AudioStream" id=8]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
 [ext_resource path="res://sound/Chat_de_Schroedinger_monde_de_la_vie_ogg.ogg" type="AudioStream" id=10]
@@ -14,11 +13,12 @@
 [ext_resource path="res://Scenes/Shared/Large_cube_life.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Shared/Cube_life.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Shared/platform_life.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Assets/A_Button.png" type="Texture" id=15]
+[ext_resource path="res://Assets/New_RT.png" type="Texture" id=15]
 [ext_resource path="res://Scripts/TutoTraitement.gd" type="Script" id=16]
-[ext_resource path="res://Assets/RT_Button.png" type="Texture" id=17]
-[ext_resource path="res://Assets/DPad_Button.png" type="Texture" id=19]
-[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://Font/Roboto-Light.ttf" type="DynamicFontData" id=17]
+[ext_resource path="res://Assets/New_Right.png" type="Texture" id=18]
+[ext_resource path="res://Assets/day_background_2.png" type="Texture" id=19]
+[ext_resource path="res://Assets/New_Left.png" type="Texture" id=20]
 
 [sub_resource type="ConcavePolygonShape2D" id=5]
 segments = PoolVector2Array( 64, 37, 0, 37, 0, 37, 0, 0, 0, 0, 64, 0, 64, 0, 64, 37 )
@@ -593,10 +593,16 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 [sub_resource type="Theme" id=7]
 
 [sub_resource type="DynamicFont" id=8]
-size = 64
-outline_size = 2
-outline_color = Color( 0, 0.172549, 0.219608, 1 )
-font_data = ExtResource( 20 )
+size = 48
+outline_size = 1
+outline_color = Color( 1, 0.2, 0, 1 )
+font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 48
+outline_size = 1
+outline_color = Color( 1, 0.2, 0, 1 )
+font_data = ExtResource( 17 )
 
 [node name="Tuto" type="YSort"]
 script = ExtResource( 9 )
@@ -629,7 +635,7 @@ __meta__ = {
 
 [node name="Day" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
 position = Vector2( -2053, -651 )
-texture = ExtResource( 7 )
+texture = ExtResource( 19 )
 offset = Vector2( 2564, 350 )
 __meta__ = {
 "_edit_lock_": true
@@ -637,7 +643,7 @@ __meta__ = {
 
 [node name="Day2" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
 position = Vector2( 511, -651 )
-texture = ExtResource( 7 )
+texture = ExtResource( 19 )
 offset = Vector2( 0, -250 )
 __meta__ = {
 "_edit_lock_": true
@@ -652,8 +658,6 @@ current = true
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="UI_Container" parent="." instance=ExtResource( 3 )]
 
 [node name="Cat_bowl" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1840, -584 )
@@ -694,7 +698,7 @@ distance = Vector2( 150, 0 )
 [node name="Large_cube_life" parent="." instance=ExtResource( 13 )]
 position = Vector2( 904, -336 )
 duration = 5
-distance = Vector2(0, 300)
+distance = Vector2( 0, 300 )
 
 [node name="Large_cube_life2" parent="." instance=ExtResource( 12 )]
 position = Vector2( 1200, -328 )
@@ -716,13 +720,25 @@ position = Vector2( 1800, 240 )
 [node name="TutoTraitement" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -423.0
 script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/TutoTraitement"]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_top = -416.0
+margin_right = 1024.0
+margin_bottom = 184.0
+texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HUD_deplacement" type="VBoxContainer" parent="CanvasLayer/TutoTraitement"]
 anchor_right = 1.0
+margin_bottom = 57.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -730,17 +746,17 @@ __meta__ = {
 
 [node name="HP" type="HBoxContainer" parent="CanvasLayer/TutoTraitement/HUD_deplacement"]
 margin_right = 1024.0
-margin_bottom = 64.0
+margin_bottom = 57.0
 alignment = 1
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/TutoTraitement/HUD_deplacement/HP"]
-margin_left = 190.0
-margin_right = 834.0
-margin_bottom = 64.0
+margin_left = 160.0
+margin_right = 864.0
+margin_bottom = 57.0
 theme = SubResource( 7 )
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "Bouger le chat de gauche a droite"
+text = "Bouger le chat de gauche à droite"
 align = 1
 
 [node name="HUD_saut" type="VBoxContainer" parent="CanvasLayer/TutoTraitement"]
@@ -752,18 +768,19 @@ __meta__ = {
 }
 
 [node name="HP" type="HBoxContainer" parent="CanvasLayer/TutoTraitement/HUD_saut"]
+margin_top = 3.0
 margin_right = 1024.0
-margin_bottom = 64.0
+margin_bottom = 60.0
 alignment = 1
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/TutoTraitement/HUD_saut/HP"]
-margin_left = 306.0
-margin_right = 718.0
-margin_bottom = 64.0
+margin_left = 300.0
+margin_right = 724.0
+margin_bottom = 57.0
 theme = SubResource( 7 )
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "Faite sauter le chat :"
+text = "Faites sauter le chat"
 align = 1
 
 [node name="HUD_changer_monde" type="VBoxContainer" parent="CanvasLayer/TutoTraitement"]
@@ -775,29 +792,48 @@ __meta__ = {
 }
 
 [node name="HP" type="HBoxContainer" parent="CanvasLayer/TutoTraitement/HUD_changer_monde"]
+margin_top = 3.0
 margin_right = 1024.0
-margin_bottom = 64.0
+margin_bottom = 60.0
 alignment = 1
 
 [node name="HPLabel" type="Label" parent="CanvasLayer/TutoTraitement/HUD_changer_monde/HP"]
-margin_left = 192.0
-margin_right = 832.0
-margin_bottom = 64.0
+margin_left = 132.0
+margin_right = 891.0
+margin_bottom = 57.0
 theme = SubResource( 7 )
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 8 )
-text = "Faite changer de dimention le chat"
+text = "Faites changer le chat de dimension"
 align = 1
 
+[node name="GoForGamelle" type="Label" parent="CanvasLayer/TutoTraitement"]
+margin_right = 1023.0
+margin_bottom = 57.0
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
+custom_fonts/font = SubResource( 9 )
+text = "Bien, maintenant plus qu'à trouver la gamelle !"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AButton" type="Sprite" parent="CanvasLayer/TutoTraitement"]
-position = Vector2( 760, 120 )
-texture = ExtResource( 15 )
+position = Vector2( 528, 120 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 7 )
 
 [node name="RT_button" type="Sprite" parent="CanvasLayer/TutoTraitement"]
-position = Vector2( 760, 120 )
-texture = ExtResource( 17 )
+position = Vector2( 528, 120 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 15 )
 
 [node name="Dpad" type="Sprite" parent="CanvasLayer/TutoTraitement"]
-position = Vector2( 760, 120 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 19 )
+position = Vector2( 472, 120 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 20 )
+
+[node name="Dpad2" type="Sprite" parent="CanvasLayer/TutoTraitement"]
+position = Vector2( 584, 120 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 18 )

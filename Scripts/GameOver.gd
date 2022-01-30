@@ -2,7 +2,7 @@ extends Node2D
 
 func _ready():
 	EVENT.emit_signal("is_alive")
-	EVENT.emit_signal("set_hp_based_on_difficulty", 0)
+	EVENT.emit_signal("set_hp_based_on_difficulty", GAME.get_difficulty())
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept"):

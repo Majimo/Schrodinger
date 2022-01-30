@@ -38,6 +38,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/Scenes/Level2.tscn">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Scenes/Level3.tscn">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Scripts/Character.gd">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/Scripts/Level.gd">
           <value>
             <set />

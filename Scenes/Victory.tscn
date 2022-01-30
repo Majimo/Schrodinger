@@ -1,39 +1,45 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Victory.gd" type="Script" id=1]
-[ext_resource path="res://Assets/death_background.png" type="Texture" id=2]
-[ext_resource path="res://Assets/A_Button.png" type="Texture" id=3]
-[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/intro_background.png" type="Texture" id=2]
+[ext_resource path="res://Assets/New_A.png" type="Texture" id=3]
+[ext_resource path="res://Font/Roboto-Light.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Font/Barrio-Regular.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://sound/Chat_de_Schroedinger_gamelle_de_la_mort.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sound/Chat_de_Schroedinger_gamelle_de_la_vie.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sound/Chat_de_Schroedinger_theme.ogg" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 180
-font_data = ExtResource( 4 )
+size = 125
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 96
+size = 72
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 96
+size = 72
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 96
+size = 72
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 96
+size = 48
+outline_size = 2
+outline_color = Color( 1, 0.2, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="Victory" type="CanvasLayer"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 292.0 ],
-"_edit_vertical_guides_": [ 771.0 ]
+"_edit_horizontal_guides_": [ 469.0 ],
+"_edit_vertical_guides_": [ 512.0 ]
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 513, 301 )
+position = Vector2( 512, 301 )
 texture = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="."]
@@ -44,11 +50,11 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="Control"]
-margin_left = 242.0
-margin_top = 24.0
-margin_right = 783.0
-margin_bottom = 204.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+margin_left = 204.0
+margin_top = 55.0
+margin_right = 821.0
+margin_bottom = 202.0
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Victoire !!!"
 __meta__ = {
@@ -56,11 +62,11 @@ __meta__ = {
 }
 
 [node name="Level1" type="Label" parent="Control"]
-margin_left = 242.0
-margin_top = 244.0
-margin_right = 332.0
-margin_bottom = 340.0
-custom_colors/font_color = Color( 0, 0, 0, 1 )
+margin_left = 246.0
+margin_top = 282.0
+margin_right = 328.0
+margin_bottom = 367.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "-1-"
 __meta__ = {
@@ -68,10 +74,10 @@ __meta__ = {
 }
 
 [node name="Level2" type="Label" parent="Control"]
-margin_left = 468.0
-margin_top = 245.0
-margin_right = 558.0
-margin_bottom = 341.0
+margin_left = 470.0
+margin_top = 281.0
+margin_right = 552.0
+margin_bottom = 366.0
 custom_fonts/font = SubResource( 4 )
 text = "-2-"
 __meta__ = {
@@ -80,9 +86,9 @@ __meta__ = {
 
 [node name="Level3" type="Label" parent="Control"]
 margin_left = 681.0
-margin_top = 245.0
-margin_right = 771.0
-margin_bottom = 341.0
+margin_top = 281.0
+margin_right = 763.0
+margin_bottom = 366.0
 custom_fonts/font = SubResource( 5 )
 text = "-3-"
 __meta__ = {
@@ -90,23 +96,37 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 307.0
-margin_top = 391.0
-margin_right = 553.0
-margin_bottom = 487.0
-custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
+margin_left = 320.0
+margin_top = 443.0
+margin_right = 582.0
+margin_bottom = 500.0
+custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Continuer"
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 599.0
-margin_top = 391.0
-margin_right = 695.0
-margin_bottom = 487.0
+margin_left = 591.0
+margin_top = 418.0
+margin_right = 662.0
+margin_bottom = 488.0
+rect_scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="VictoryAliveCat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="VictoryDeadCat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="ThemeMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[connection signal="finished" from="VictoryAliveCat" to="." method="_on_VictoryAliveCat_finished"]
+[connection signal="finished" from="VictoryDeadCat" to="." method="_on_VictoryDeadCat_finished"]

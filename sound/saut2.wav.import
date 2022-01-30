@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/paws.wav-e59190ee8a2db40992d6ef8cc40ea4b3.sample"
+path="res://.import/saut2.wav-1a04b1126fad087d30a80a4d46beec24.sample"
 
 [deps]
 
-source_file="res://sound/paws.wav"
-dest_files=[ "res://.import/paws.wav-e59190ee8a2db40992d6ef8cc40ea4b3.sample" ]
+source_file="res://sound/saut2.wav"
+dest_files=[ "res://.import/saut2.wav-1a04b1126fad087d30a80a4d46beec24.sample" ]
 
 [params]
 
