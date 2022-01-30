@@ -1,30 +1,30 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
-[ext_resource path="res://Assets/cat-idle_00001.png" type="Texture" id=3]
-[ext_resource path="res://Assets/cat-idle_00000.png" type="Texture" id=4]
-[ext_resource path="res://Assets/cat-idle_00002.png" type="Texture" id=5]
-[ext_resource path="res://Assets/cat-idle_00003.png" type="Texture" id=6]
-[ext_resource path="res://Assets/cat-idle_00004.png" type="Texture" id=7]
-[ext_resource path="res://Assets/cat-idle_00005.png" type="Texture" id=8]
-[ext_resource path="res://Assets/cat-idle_00006.png" type="Texture" id=9]
-[ext_resource path="res://Assets/cat-idle_00007.png" type="Texture" id=10]
-[ext_resource path="res://Assets/cat-idle_00009.png" type="Texture" id=11]
-[ext_resource path="res://Assets/cat-idle_00010.png" type="Texture" id=12]
-[ext_resource path="res://Assets/cat-idle_00008.png" type="Texture" id=13]
-[ext_resource path="res://Assets/cat-idle_00018.png" type="Texture" id=14]
-[ext_resource path="res://Assets/cat-idle_00017.png" type="Texture" id=15]
-[ext_resource path="res://Assets/cat-idle_00021.png" type="Texture" id=16]
-[ext_resource path="res://Assets/cat-idle_00019.png" type="Texture" id=17]
-[ext_resource path="res://Assets/cat-idle_00016.png" type="Texture" id=18]
-[ext_resource path="res://Assets/cat-idle_00012.png" type="Texture" id=19]
-[ext_resource path="res://Assets/cat-idle_00013.png" type="Texture" id=20]
-[ext_resource path="res://Assets/cat-idle_00014.png" type="Texture" id=21]
-[ext_resource path="res://Assets/cat-idle_00015.png" type="Texture" id=22]
-[ext_resource path="res://Assets/cat-idle_00020.png" type="Texture" id=23]
-[ext_resource path="res://Assets/cat-idle_00011.png" type="Texture" id=24]
-[ext_resource path="res://Assets/cat-idle_00022.png" type="Texture" id=25]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00021_copie.png" type="Texture" id=3]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00022_copie.png" type="Texture" id=4]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00023_copie.png" type="Texture" id=5]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00001_copie.png" type="Texture" id=6]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00000_copie.png" type="Texture" id=7]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00002_copie.png" type="Texture" id=8]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00003_copie.png" type="Texture" id=9]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00004_copie.png" type="Texture" id=10]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00005_copie.png" type="Texture" id=11]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00006_copie.png" type="Texture" id=12]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00007_copie.png" type="Texture" id=13]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00014_copie.png" type="Texture" id=14]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00010_copie.png" type="Texture" id=15]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00016_copie.png" type="Texture" id=16]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00018_copie.png" type="Texture" id=17]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00020_copie.png" type="Texture" id=18]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00012_copie.png" type="Texture" id=19]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00011_copie.png" type="Texture" id=20]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00009_copie.png" type="Texture" id=21]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00015_copie.png" type="Texture" id=22]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00017_copie.png" type="Texture" id=23]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00019_copie.png" type="Texture" id=24]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00008_copie.png" type="Texture" id=25]
 [ext_resource path="res://Assets/CatWalk/Cat-walk-1.png" type="Texture" id=26]
 [ext_resource path="res://Assets/CatWalk/Cat-walk-2.png" type="Texture" id=27]
 [ext_resource path="res://Assets/CatWalk/Cat-walk-3.png" type="Texture" id=28]
@@ -42,13 +42,14 @@
 [ext_resource path="res://Assets/CatJump/Cat_Jump_4.png" type="Texture" id=40]
 [ext_resource path="res://sound/saut2.wav" type="AudioStream" id=41]
 [ext_resource path="res://sound/pattes2.wav" type="AudioStream" id=42]
+[ext_resource path="res://Assets/cat-idle/cat-idle_00013_copie.png" type="Texture" id=43]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 50.75 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 21 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 24 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 17 ), ExtResource( 23 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 15 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 43 ), ExtResource( 14 ), ExtResource( 22 ), ExtResource( 16 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 24 ), ExtResource( 18 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 8.0
@@ -91,7 +92,7 @@ smoothing_enabled = true
 position = Vector2( 1, 2 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 7
+frame = 23
 playing = true
 flip_h = true
 
