@@ -99,15 +99,12 @@ func _on_CatAnimation_animation_finished():
 		$CatAnimation.set_frame(3)
 
 func _collison(gradient_death_effect, position):
-	print(have_been_kill)
 	var pos = Vector2()
 	pos.x= position.x
 	pos.y = position.y
 	if is_on_floor() || is_on_ceiling():
-		print('floor')
 		pos.y -= gradient_death_effect *3
 	if is_on_wall():
-		print('wall')
 		pos.x -= gradient_death_effect *3
 	if(!is_on_ceiling() && !is_on_wall()) && !is_on_floor():
 		have_been_kill = false

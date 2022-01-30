@@ -20,9 +20,7 @@ func _ready():
 		is_dialog_finished = true
 	elif !GAME.get_can_move():
 		var new_dialog = Dialogic.start("intro")
-		print("yo")
 		add_child(new_dialog)
-		print("yop")
 		new_dialog.connect("dialogic_signal", self, "_on_dialog_listener")
 		$Character.visible = false
 	else:
