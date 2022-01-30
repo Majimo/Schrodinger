@@ -57,7 +57,7 @@ margin_right = 874.0
 margin_bottom = 301.0
 custom_colors/font_color = Color( 0.768627, 0.67451, 0.611765, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Voila quand même un Jean-Michel JAM
+text = "Voila quand meme un Jean-Michel JAM
 pour te remonter le moral ;)"
 align = 1
 __meta__ = {
