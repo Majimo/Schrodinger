@@ -50,6 +50,4 @@ func _on_EVENT_set_hp_based_on_difficulty(difficulty: int):
 		set_nb_hp(7)
 
 func _on_EVENT_can_move():
-	print(can_move)
 	set_can_move(!can_move)
-	print(can_move)
