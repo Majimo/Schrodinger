@@ -14,15 +14,16 @@ var vel = Vector2()
 var up = Vector2(0,-1)
 var have_been_kill = false
 
+
+
 func _physics_process(delta):
 	if have_been_kill:
-		var gradient_death_effect = 25 if GAME.get_is_alive() else -25
+		var gradient_death_effect = -70 if GAME.get_is_alive() else 70
 		position = _collison(gradient_death_effect, position)
 
 	manage_gravity(delta)
 	if GAME.get_can_move():
 		if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > -2:
-			have_been_kill = true
 			var gradient_death_effect = 25 if GAME.get_is_alive() else -25
 			var newPos = Vector2()
 			position.y = (-position.y) + gradient_death_effect
@@ -99,13 +100,15 @@ func _on_CatAnimation_animation_finished():
 		$CatAnimation.set_frame(3)
 
 func _collison(gradient_death_effect, position):
+	have_been_kill = true
 	var pos = Vector2()
 	pos.x= position.x
 	pos.y = position.y
 	if is_on_floor() || is_on_ceiling():
-		pos.y -= gradient_death_effect *3
+		pos.y += gradient_death_effect * 0.5
+		pos.x += 25
 	if is_on_wall():
-		pos.x -= gradient_death_effect *3
+		pos.x += 25
 	if(!is_on_ceiling() && !is_on_wall()) && !is_on_floor():
 		have_been_kill = false
 	return pos
