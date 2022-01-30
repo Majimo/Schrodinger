@@ -14,8 +14,6 @@ var vel = Vector2()
 var up = Vector2(0,-1)
 var have_been_kill = false
 
-
-
 func _physics_process(delta):
 	if have_been_kill:
 		var gradient_death_effect = -70 if GAME.get_is_alive() else 70
