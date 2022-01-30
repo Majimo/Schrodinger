@@ -16,7 +16,9 @@ size = 40
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 58
+size = 48
+outline_size = 2
+outline_color = Color( 1, 0.2, 0, 1 )
 font_data = ExtResource( 5 )
 
 [node name="GameOver" type="Node2D"]
@@ -66,21 +68,22 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="CanvasLayer/Control"]
-margin_left = 256.0
-margin_top = 441.0
-margin_right = 629.0
-margin_bottom = 510.0
+margin_left = 287.0
+margin_top = 446.0
+margin_right = 640.0
+margin_bottom = 503.0
 custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Recommencer"
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
-margin_left = 650.0
+margin_left = 642.0
 margin_top = 423.0
-margin_right = 721.0
+margin_right = 713.0
 margin_bottom = 493.0
 rect_scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )

@@ -26,13 +26,15 @@ size = 72
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 72
+size = 48
+outline_size = 2
+outline_color = Color( 1, 0.2, 0, 1 )
 font_data = ExtResource( 4 )
 
 [node name="Victory" type="CanvasLayer"]
 script = ExtResource( 1 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 432.0 ],
+"_edit_horizontal_guides_": [ 469.0 ],
 "_edit_vertical_guides_": [ 512.0 ]
 }
 
@@ -94,22 +96,23 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 275.0
-margin_top = 423.0
+margin_left = 320.0
+margin_top = 443.0
 margin_right = 582.0
-margin_bottom = 508.0
+margin_bottom = 500.0
 custom_colors/font_color = Color( 1, 0.2, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Continuer"
+uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="Control"]
-margin_left = 603.0
-margin_top = 414.0
-margin_right = 674.0
-margin_bottom = 484.0
+margin_left = 591.0
+margin_top = 418.0
+margin_right = 662.0
+margin_bottom = 488.0
 rect_scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 __meta__ = {
