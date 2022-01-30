@@ -92,7 +92,7 @@ smoothing_enabled = true
 position = Vector2( 1, 2 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 23
+frame = 21
 playing = true
 flip_h = true
 
