@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/New_B.png" type="Texture" id=1]
 [ext_resource path="res://Assets/intro_background.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/schrodinger_bis.png" type="Texture" id=6]
 [ext_resource path="res://Font/Roboto-Light.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://Font/Barrio-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://sound/Chat_de_Schroedinger_theme.ogg" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=5]
 size = 101
@@ -148,5 +149,5 @@ scale = Vector2( 2.29623, 2.29623 )
 texture = ExtResource( 6 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 autoplay = true
