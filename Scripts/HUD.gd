@@ -8,4 +8,4 @@ func _ready():
 
 
 func on_EVENT_nb_hp_changed(nb_hp: int):
-	hp_counter_label.set_text(String(nb_hp))
+	hp_counter_label.set_text(" " + String(nb_hp))

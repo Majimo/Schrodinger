@@ -3,6 +3,7 @@ extends Node
 var nb_hp: int = 9 setget set_nb_hp, get_nb_hp
 var is_alive: bool = true setget set_is_alive, get_is_alive
 var can_move: bool = false setget set_can_move, get_can_move
+var difficulty: int = 0 setget set_difficulty, get_difficulty
 
 
 #### ACCESSORS ####
@@ -29,6 +30,13 @@ func set_can_move(value: bool):
 
 func get_can_move() -> bool:
 	return can_move 
+
+func set_difficulty(value: int):
+	if value != difficulty:
+		difficulty = value
+
+func get_difficulty() -> int:
+	return difficulty 
 	
 func _ready():
 	EVENT.connect("hp_lost", self, "_on_EVENT_hp_lost")
@@ -48,8 +56,7 @@ func _on_EVENT_set_hp_based_on_difficulty(difficulty: int):
 		set_nb_hp(9)
 	else:
 		set_nb_hp(7)
+	set_difficulty(difficulty)
 
 func _on_EVENT_can_move():
-	print(can_move)
 	set_can_move(!can_move)
-	print(can_move)

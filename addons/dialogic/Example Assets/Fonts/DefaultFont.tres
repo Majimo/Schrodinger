@@ -1,7 +1,7 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[ext_resource path="res://Font/CatPentagram.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Font/Roboto-Light.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 50
+size = 36
 font_data = ExtResource( 1 )

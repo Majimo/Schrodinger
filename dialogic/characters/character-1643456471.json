@@ -1,5 +1,5 @@
 {
-	"color": "#ffff0000",
+	"color": "#ffff3300",
 	"description": "Schrodinger's Cat",
 	"display_name": "",
 	"display_name_bool": false,
@@ -13,11 +13,11 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Assets/cat-idle_00000.png"
+			"path": "res://Assets/cat.png"
 		},
 		{
 			"name": "Amused",
-			"path": "res://Assets/cat-idle_00011.png"
+			"path": "res://Assets/cat.png"
 		}
 	],
 	"scale": 100,
