@@ -19,8 +19,6 @@ var have_been_kill = false
 func _physics_process(delta):
 	if have_been_kill:
 		var gradient_death_effect = -70 if GAME.get_is_alive() else 70
-		print('gradient_death_effectprocess')
-		print(gradient_death_effect)
 		position = _collison(gradient_death_effect, position)
 
 	manage_gravity(delta)
