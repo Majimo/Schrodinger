@@ -642,7 +642,6 @@ __meta__ = {
 
 [node name="Cat_bowl" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1600, -600 )
-rotation = 3.14159
 
 [node name="World_life_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
