@@ -32,7 +32,7 @@ func _physics_process(delta):
 				get_tree().change_scene("res://Scenes/GameOver.tscn")
 			cat.set_position(Vector2(position.x, new_positionY))
 		movement_loop()
-	up = Vector2(0,1) if !GAME.get_is_alive() else Vector2(0,-1)
+	up = Vector2(0,1) if cat_is_in_dead_world() else Vector2(0,-1)
 	vel = move_and_slide(vel, up)
 	
 
@@ -57,14 +57,14 @@ func manage_flip_h(dirx):
 		$CollisionShape2D.position.x = POSITIONS.POS_X_LEFT
 
 func manage_flip_v():
-	$CatAnimation.flip_v = !GAME.get_is_alive()
-	$CollisionShape2D.position.y = POSITIONS.POS_Y_UP if GAME.get_is_alive() else POSITIONS.POS_Y_DOWN
+	$CatAnimation.flip_v = cat_is_in_dead_world()
+	$CollisionShape2D.position.y = POSITIONS.POS_Y_UP if cat.position.y > 0 else POSITIONS.POS_Y_DOWN
 
 func manage_gravity(delta):
-	if GAME.get_is_alive():
-		vel.y += GRAVITY * delta
-	else:
+	if cat_is_in_dead_world():
 		vel.y -= (GRAVITY/2) * delta
+	else:
+		vel.y += GRAVITY * delta
 
 func manage_jump():
 	$CatAnimation.play("jump")
@@ -95,3 +95,6 @@ func _on_CatAnimation_animation_finished():
 	if "jump".is_subsequence_of($CatAnimation.get_animation()):
 		$CatAnimation.stop()
 		$CatAnimation.set_frame(3)
+
+func cat_is_in_dead_world() -> bool:
+	return cat.position.y > 0
