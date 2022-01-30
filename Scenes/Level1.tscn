@@ -1,22 +1,22 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=1]
 [ext_resource path="res://Assets/death_background.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/cat_bowl.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/tileSetJour.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/tileSetDeath.png" type="Texture" id=6]
-[ext_resource path="res://Assets/day_background.png" type="Texture" id=7]
-[ext_resource path="res://sound/Chat_de_Schroedinger_mort.mp3" type="AudioStream" id=8]
-[ext_resource path="res://Scripts/Level.gd" type="Script" id=9]
-[ext_resource path="res://sound/Chat_de_Schroedinger.mp3" type="AudioStream" id=10]
+[ext_resource path="res://Assets/tileSetJour.png" type="Texture" id=7]
+[ext_resource path="res://Assets/day_background.png" type="Texture" id=8]
+[ext_resource path="res://sound/Chat_de_Schroedinger_mort.mp3" type="AudioStream" id=9]
+[ext_resource path="res://sound/Chat_de_Schroedinger_monde_de_la_vie_ogg.ogg" type="AudioStream" id=10]
 
 [sub_resource type="ConcavePolygonShape2D" id=5]
 segments = PoolVector2Array( 64, 37, 0, 37, 0, 37, 0, 0, 0, 0, 64, 0, 64, 0, 64, 37 )
 
 [sub_resource type="TileSet" id=2]
 0/name = "tileSetJour.png 0"
-0/texture = ExtResource( 5 )
+0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 384, 448 )
@@ -582,7 +582,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 1/z_index = 0
 
 [node name="Level" type="YSort"]
-script = ExtResource( 9 )
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -612,7 +612,7 @@ __meta__ = {
 
 [node name="Day" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
 position = Vector2( -2053, -651 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 2564, 350 )
 __meta__ = {
 "_edit_lock_": true
@@ -620,14 +620,14 @@ __meta__ = {
 
 [node name="Day2" type="Sprite" parent="ParallaxBackground/EnvironmentParallax"]
 position = Vector2( 511, -651 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 0, -250 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 206, -194 )
+[node name="Character" parent="." instance=ExtResource( 3 )]
+position = Vector2( 192, -252 )
 z_index = 1
 
 [node name="Camera2D2" type="Camera2D" parent="Character"]
@@ -636,18 +636,18 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="UI_Container" parent="." instance=ExtResource( 3 )]
+[node name="UI_Container" parent="." instance=ExtResource( 5 )]
 
 [node name="Cat_bowl" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1600, -600 )
 
 [node name="World_life_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-volume_db = -6.0
+volume_db = -8.0
 autoplay = true
 
 [node name="World_death_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 9 )
 volume_db = -6.0
 autoplay = true
 

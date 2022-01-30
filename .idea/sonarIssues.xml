@@ -28,12 +28,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/Scenes/Character.tscn">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/Scenes/Level.tscn">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/Scripts/Level.gd">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/Scripts/moving_platform_horizontal.gd">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/project.godot">
           <value>
             <set />
           </value>

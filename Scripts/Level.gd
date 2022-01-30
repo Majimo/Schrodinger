@@ -1,20 +1,27 @@
 extends YSort
 
 # Position initial Caracter 
-var Caracter_PosX = 200
-var Caracter_PosY = 200
+export var Caracter_PosX = 200
+export var Caracter_PosY = 200
 
 # Position initial Cat_bowl
-var Cat_bowl_PosX = 1600
-var Cat_bowl_PosY = 600
+export var Cat_bowl_PosX_Alive = 1600
+export var Cat_bowl_PosY_Alive = -600
+
+export var Cat_bowl_PosX_Dead = 1600
+export var Cat_bowl_PosY_Dead = 600
 
 var is_dialog_finished = false
 
 
 func _ready():
-	var new_dialog = Dialogic.start("intro")
-	add_child(new_dialog)
-	new_dialog.connect("dialogic_signal", self, "_on_dialog_listener")
+	if !GAME.get_can_move():
+		var new_dialog = Dialogic.start("intro")
+		add_child(new_dialog)
+		new_dialog.connect("dialogic_signal", self, "_on_dialog_listener")
+		$Character.visible = false
+	else:
+		is_dialog_finished = true
 
 	EVENT.connect("is_alive", self, "_on_EVENT_is_alive")
 	_set_position_player()
@@ -38,16 +45,16 @@ func _set_position_player():
 	
 func _set_position_cat_bowl():
 	randomize()
-	var posistionAleatoire = Vector2()
-	var aleatoire = randi() % 100
-	var is_in_dead_world = aleatoire % 2 == 0
-	posistionAleatoire.y = -Cat_bowl_PosY
+	var random = randi() % 100
+	var is_in_dead_world = random % 2 == 0
+	var randomPosition = Vector2(
+		Cat_bowl_PosX_Dead if is_in_dead_world else Cat_bowl_PosX_Alive,
+		Cat_bowl_PosY_Dead if is_in_dead_world else Cat_bowl_PosY_Alive
+	)
 	if(is_in_dead_world):
-		posistionAleatoire.y = Cat_bowl_PosY
 		$Cat_bowl.set_rotation(deg2rad(180))
 		EVENT.emit_signal("change_cat_bowl_sprite")
-	posistionAleatoire.x = Cat_bowl_PosX
-	$Cat_bowl.position = posistionAleatoire
+	$Cat_bowl.position = randomPosition
 
 #### SIGNALS ####
 
@@ -61,6 +68,8 @@ func _on_dialog_listener(string: String):
 			t.start()
 			yield(t, "timeout")
 			is_dialog_finished = true
+			$Character.visible = true
+			EVENT.emit_signal("can_move")
 
 func _on_EVENT_is_alive():
 	if(GAME.get_is_alive()):

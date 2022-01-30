@@ -7,37 +7,40 @@ const GRAVITY = 1000
 ## valeur par défaut du saut
 const JUMP = 500
 
-export (int) var max_speed = 200
+var max_speed = 200
 
 var is_alive = true
 var vel = Vector2()
 var up = Vector2(0,-1)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > 0:
-		var gradient_death_effect = 25 if GAME.get_is_alive() else -25
-		var new_positionY = position.y
-		var new_positionX = position.x
-		if is_on_floor():
-			new_positionX += gradient_death_effect
-		if is_on_wall():
-			new_positionY -= gradient_death_effect
-		new_positionY = (-position.y) + gradient_death_effect
-		EVENT.emit_signal("is_alive")
-		if !GAME.get_is_alive():
-			EVENT.emit_signal("hp_lost")
-		cat.set_position(Vector2(position.x, new_positionY))
 	manage_gravity(delta)
-	movement_loop()
+	if GAME.get_can_move():
+		if Input.is_action_just_pressed("ui_kill") && GAME.get_nb_hp() > -2:
+			var gradient_death_effect = 25 if GAME.get_is_alive() else -25
+			var new_positionY = position.y
+			var new_positionX = position.x
+			if is_on_floor():
+				new_positionX += gradient_death_effect
+			if is_on_wall():
+				new_positionY -= gradient_death_effect
+			new_positionY = (-position.y) + gradient_death_effect
+			EVENT.emit_signal("is_alive")
+			if !GAME.get_is_alive():
+				EVENT.emit_signal("hp_lost")
+			if !GAME.get_is_alive() && GAME.get_nb_hp() == -1:
+				get_tree().change_scene("res://Scenes/GameOver.tscn")
+			cat.set_position(Vector2(position.x, new_positionY))
+		movement_loop()
 	up = Vector2(0,1) if !GAME.get_is_alive() else Vector2(0,-1)
 	vel = move_and_slide(vel, up)
+	
 
 #### BUILT-IN ####
 
 func manage_animation(moving):
 	if moving:
 		$CatAnimation.play("walk")
-		print("marche")
 		if !$CatWalk.is_playing():
 			$CatWalk.play()
 	else:
@@ -79,7 +82,7 @@ func movement_loop():
 	var jump = Input.is_action_pressed("ui_accept")
 	
 	var dirx = int(right) - int(left)
-	vel.x = dirx * max_speed
+	vel.x = dirx * 200
 	
 	manage_flip_h(dirx)
 	manage_flip_v()
