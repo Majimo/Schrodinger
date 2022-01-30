@@ -14,6 +14,10 @@ func _ready():
 	level3.set("custom_colors/font_color", Color(COLORS.darkorange))
 	level1.get("custom_fonts/font").set_outline_size(4)
 	level1.get("custom_fonts/font").set_outline_color(Color(COLORS.lightorange))
+	if GAME.is_alive:
+		$VictoryAliveCat.play()
+	else:
+		$VictoryDeadCat.play()
 
 func _physics_process(delta):
 	if(Input.is_action_just_pressed("ui_accept")):
@@ -50,3 +54,13 @@ func match_selected_level(selected_level: int):
 			level3.set("custom_colors/font_color", Color(COLORS.darkorange))
 			level3.get("custom_fonts/font").set_outline_size(4)
 			level3.get("custom_fonts/font").set_outline_color(Color(COLORS.lightorange))
+
+
+func _on_VictoryAliveCat_finished():
+	play_theme_music()
+
+func _on_VictoryDeadCat_finished():
+	play_theme_music()
+
+func play_theme_music():
+	$ThemeMusic.play()
