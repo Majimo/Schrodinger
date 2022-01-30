@@ -71,10 +71,10 @@ func manage_jump():
 	if $CatWalk.is_playing():
 		$CatWalk.stop()
 	$CatJump.play()
-	if GAME.get_is_alive():
-		vel.y = -JUMP
-	else:
+	if cat_is_in_dead_world():
 		vel.y = JUMP
+	else:
+		vel.y = -JUMP
 
 func movement_loop():
 	var right = Input.is_action_pressed("ui_right")
