@@ -62,7 +62,7 @@ func _on_dialog_listener(string: String):
 	match string:
 		"end_intro":
 			var t = Timer.new()
-			t.set_wait_time(3)
+			t.set_wait_time(2)
 			t.set_one_shot(true)
 			self.add_child(t)
 			t.start()
