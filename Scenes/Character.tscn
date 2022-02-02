@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -40,9 +40,12 @@
 [ext_resource path="res://Assets/CatJump/Cat_Jump_2.png" type="Texture" id=38]
 [ext_resource path="res://Assets/CatJump/Cat_Jump_3.png" type="Texture" id=39]
 [ext_resource path="res://Assets/CatJump/Cat_Jump_4.png" type="Texture" id=40]
-[ext_resource path="res://sound/saut3.wav" type="AudioStream" id=41]
-[ext_resource path="res://sound/pattes3.wav" type="AudioStream" id=42]
+[ext_resource path="res://sound/saut8.wav" type="AudioStream" id=41]
+[ext_resource path="res://sound/pattes5.wav" type="AudioStream" id=42]
 [ext_resource path="res://Assets/cat-idle/cat-idle_00013_copie.png" type="Texture" id=43]
+[ext_resource path="res://Scenes/BetweenWorlds.tscn" type="PackedScene" id=44]
+[ext_resource path="res://sound/Chat_de_Schroedinger_transition_vie.mp3" type="AudioStream" id=45]
+[ext_resource path="res://sound/Chat_de_Schroedinger_transition_mort.mp3" type="AudioStream" id=46]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 46, 50.75 )
@@ -54,15 +57,15 @@ animations = [ {
 "name": "idle",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ) ],
-"loop": true,
-"name": "walk",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 40 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "jump",
 "speed": 4.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "walk",
+"speed": 8.0
 } ]
 
 [node name="Character" type="KinematicBody2D"]
@@ -80,28 +83,30 @@ show_behind_parent = true
 position = Vector2( -7, 8 )
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2( -2, -99 )
-zoom = Vector2( 1.5, 1.5 )
-drag_margin_h_enabled = true
-drag_margin_v_enabled = true
-smoothing_enabled = true
-
 [node name="CatAnimation" type="AnimatedSprite" parent="."]
 position = Vector2( 1, 2 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 23
+frame = 9
 playing = true
 flip_h = true
 
 [node name="CatJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 41 )
-volume_db = 2.0
+volume_db = 14.0
 
 [node name="CatWalk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 42 )
-volume_db = 2.0
+volume_db = 14.0
+
+[node name="FromDeathToDay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 45 )
+volume_db = -7.0
+
+[node name="FromDayToDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 46 )
+volume_db = -7.0
+
+[node name="BetweenWorlds" parent="." instance=ExtResource( 44 )]
 
 [connection signal="animation_finished" from="CatAnimation" to="." method="_on_CatAnimation_animation_finished"]

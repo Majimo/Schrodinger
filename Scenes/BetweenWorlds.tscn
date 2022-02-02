@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/BetweenWorlds.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.741176, 0.678431, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "from_day_to_death"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 4.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.741176, 0.678431, 0 ), Color( 1, 0.741176, 0.678431, 1 ), Color( 0, 0, 0.6, 1 ), Color( 0, 0, 0.6, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "from_day_to_death2"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.741176, 0.678431, 1 ), Color( 0, 0, 0.6, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "from_death_to_day"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 4.5, 6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.741176, 0.678431, 0 ), Color( 0, 0, 0.6, 1 ), Color( 1, 0.741176, 0.678431, 1 ), Color( 1, 0.741176, 0.678431, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "from_death_to_day2"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0.6, 1 ), Color( 1, 0.741176, 0.678431, 1 ) ]
+}
+
+[node name="BetweenWorlds" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0.741176, 0.678431, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/from_day_to_death = SubResource( 2 )
+anims/from_day_to_death2 = SubResource( 4 )
+anims/from_death_to_day = SubResource( 3 )
+anims/from_death_to_day2 = SubResource( 5 )
