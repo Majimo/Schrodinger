@@ -19,7 +19,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "from_day_to_death"
-length = 6.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
@@ -27,7 +27,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 4.5, 6 ),
+"times": PoolRealArray( 0, 0.3, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.741176, 0.678431, 0 ), Color( 1, 0.741176, 0.678431, 1 ), Color( 0, 0, 0.6, 1 ), Color( 0, 0, 0.6, 0 ) ]
@@ -51,7 +51,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "from_death_to_day"
-length = 6.0
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
@@ -59,7 +59,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 4.5, 6 ),
+"times": PoolRealArray( 0, 0.3, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.741176, 0.678431, 0 ), Color( 0, 0, 0.6, 1 ), Color( 1, 0.741176, 0.678431, 1 ), Color( 1, 0.741176, 0.678431, 0 ) ]

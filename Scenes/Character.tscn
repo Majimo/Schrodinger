@@ -40,7 +40,7 @@
 [ext_resource path="res://Assets/CatJump/Cat_Jump_2.png" type="Texture" id=38]
 [ext_resource path="res://Assets/CatJump/Cat_Jump_3.png" type="Texture" id=39]
 [ext_resource path="res://Assets/CatJump/Cat_Jump_4.png" type="Texture" id=40]
-[ext_resource path="res://sound/saut8.wav" type="AudioStream" id=41]
+[ext_resource path="res://sound/saut9.wav" type="AudioStream" id=41]
 [ext_resource path="res://sound/pattes5.wav" type="AudioStream" id=42]
 [ext_resource path="res://Assets/cat-idle/cat-idle_00013_copie.png" type="Texture" id=43]
 [ext_resource path="res://Scenes/BetweenWorlds.tscn" type="PackedScene" id=44]
@@ -87,17 +87,17 @@ shape = SubResource( 1 )
 position = Vector2( 1, 2 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 9
+frame = 17
 playing = true
 flip_h = true
 
 [node name="CatJump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 41 )
-volume_db = 14.0
+volume_db = 3.0
 
 [node name="CatWalk" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 42 )
-volume_db = 14.0
+volume_db = 11.0
 
 [node name="FromDeathToDay" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 45 )

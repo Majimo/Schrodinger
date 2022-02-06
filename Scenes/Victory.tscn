@@ -121,12 +121,15 @@ __meta__ = {
 
 [node name="VictoryAliveCat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -9.0
 
 [node name="VictoryDeadCat" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+volume_db = -9.0
 
 [node name="ThemeMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 8 )
+volume_db = -9.0
 
 [connection signal="finished" from="VictoryAliveCat" to="." method="_on_VictoryAliveCat_finished"]
 [connection signal="finished" from="VictoryDeadCat" to="." method="_on_VictoryDeadCat_finished"]

@@ -103,6 +103,8 @@ func movement_loop():
 
 func transit_cat_to_opposite_world(delta):
 	manage_gravity(1)
+	if $CatWalk.is_playing():
+		$CatWalk.stop()
 	GAME.set_can_move(false)
 	$".".visible = false;
 	var gradient_death_effect = 25 if GAME.get_is_alive() else -25
@@ -128,7 +130,7 @@ func transit_cat_to_opposite_world(delta):
 
 func wait_transition_sound_end():
 	var t = Timer.new()
-	t.set_wait_time(5)
+	t.set_wait_time(4)
 	t.set_one_shot(true)
 	self.add_child(t)
 	t.start()
